@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGame", "SpaceGame.csproj", "{B05352BA-1A54-4E97-B8AE-58BC02740505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGameClassLibrary", "SpaceGameClassLibrary\SpaceGameClassLibrary.csproj", "{C8B357AF-A6F8-48FF-A93D-0C60D64F1B09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B05352BA-1A54-4E97-B8AE-58BC02740505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05352BA-1A54-4E97-B8AE-58BC02740505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05352BA-1A54-4E97-B8AE-58BC02740505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05352BA-1A54-4E97-B8AE-58BC02740505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8B357AF-A6F8-48FF-A93D-0C60D64F1B09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8B357AF-A6F8-48FF-A93D-0C60D64F1B09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8B357AF-A6F8-48FF-A93D-0C60D64F1B09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8B357AF-A6F8-48FF-A93D-0C60D64F1B09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08C490EE-B3EF-479A-8D27-C6C0ADFE30B0}
+	EndGlobalSection
+EndGlobal
