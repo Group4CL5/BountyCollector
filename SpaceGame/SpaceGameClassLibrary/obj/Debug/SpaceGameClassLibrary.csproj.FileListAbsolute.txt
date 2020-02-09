@@ -3,3 +3,8 @@ C:\Users\chimp\Documents\Visual Studio 2019\Projects\MSSAProjects\SpaceGame\Spac
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\MSSAProjects\SpaceGame\SpaceGameClassLibrary\bin\Debug\SpaceGameClassLibrary.pdb
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\MSSAProjects\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.dll
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\MSSAProjects\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.pdb
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\SpaceGameClassLibrary.dll
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\SpaceGameClassLibrary.pdb
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.csprojAssemblyReference.cache
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.dll
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.pdb
