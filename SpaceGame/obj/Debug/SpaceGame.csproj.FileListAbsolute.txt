@@ -17,3 +17,4 @@ C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\obj\Debug\SpaceGame.cs
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\SpaceMenu.wav

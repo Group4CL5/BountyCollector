@@ -14,7 +14,7 @@ namespace SpaceGame
         {
             //Francisco: Below is the code that allows the beat "BountyHunter.wav" to be played in background.
             SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "BountyCollector.wav";
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "SpaceMenu.wav";
             player.Play();
             //Francisco: The code ends here for "BountyHunter.wav" background music.
             try
