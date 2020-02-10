@@ -4,14 +4,20 @@ namespace SpaceGameClassLibrary
 {
     public class GameManager
     {
+        CoinManager coinManager;
+
         public GameManager()
         {
+
+            coinManager = new CoinManager();
+
             MainMenu();
             Setting();
         }
 
         static void MainMenu()
         {
+
             try
             {
                 Cwl("Welcome to Bounty Collector!\n" +

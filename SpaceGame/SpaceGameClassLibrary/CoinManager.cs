@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class CoinManager
+    public class CoinManager
     {
         private int _coins = 0;
 
