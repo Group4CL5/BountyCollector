@@ -8,7 +8,8 @@ namespace SpaceGameClassLibrary
 
         public GameManager()
         {
-            Shop.ShowShop(coinManager);
+            //Shop.ShowShop(coinManager);
+            Fight fight = new Fight();
             //MainMenu();
             //Setting();
         }
