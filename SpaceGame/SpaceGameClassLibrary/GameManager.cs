@@ -4,25 +4,13 @@ namespace SpaceGameClassLibrary
 {
     public class GameManager
     {
-<<<<<<< HEAD
         CoinManager coinManager = new CoinManager();
 
         public GameManager()
         {
-            Shop.ShowShop(coinManager);                      
+            Shop.ShowShop(coinManager);
             //MainMenu();
             //Setting();
-=======
-        CoinManager coinManager;
-
-        public GameManager()
-        {
-
-            coinManager = new CoinManager();
-
-            MainMenu();
-            Setting();
->>>>>>> 136507db945354e21e47fe4580bf4032229fe197
         }
 
         static void MainMenu()
