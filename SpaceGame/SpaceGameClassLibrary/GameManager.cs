@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 
 namespace SpaceGameClassLibrary
 {
@@ -10,7 +11,7 @@ namespace SpaceGameClassLibrary
         {
             //Shop.ShowShop(coinManager);
             MainMenu();
-            BegSetting();
+            //BegSetting();
             EndSetting();
         }
 
@@ -31,6 +32,7 @@ namespace SpaceGameClassLibrary
 
                 Cwl();
                 if (choice == "No") Environment.Exit(0);
+                BegSetting();
             }
             catch (Exception ex)
             {
@@ -41,14 +43,17 @@ namespace SpaceGameClassLibrary
 
         static void BegSetting()//Setting for the beginning of the game.
         {
+            music1();
             Cwl("=========================\n");
-            Cwl("You are Aster Roid, you are known across the Void Empire" +
-                " as the one who travels through space to collect bounties. " +
-                "You are invited to a secret rebel planet called Hubb. While " +
-                "the inhabitants of Hubb were planning to overthrow the Void Empire, They chose" +
-                " you to be the hero. They tasked you to collect bounties from the four" +
-                "other planets that are under imperial control: Red Sand, Watergate, Static, and Void. " +
-                "The bounties you collect can be traded in for spaceships. " +
+            Cwl("You are Aster Roid, you are known across the Void Empire\n" +
+                " as the one who travels through space to collect bounties. \n" +
+                "You are invited to a secret rebel planet called Hubb. While \n" +
+                "the inhabitants of Hubb were planning to overthrow the Void \n" +
+                "Empire, they chose you to be the hero. They tasked you to \n" +
+                " collect bounties from the four other planets that are under \n" +
+                " imperial control: Red Sand, Watergate, Static, and Void.\n" +
+                " Watergate, Static, and Void.\n\n" +               
+                "The bounties you collect can be traded in for spaceships. \n" +
                 "For every planet you are going to need a special spaceship. \n");
             Cwl("=========================\n");
         }
@@ -67,5 +72,15 @@ namespace SpaceGameClassLibrary
 
         static void Cwl(string str = "") => Console.WriteLine(str);
         static void Cw(string str = "") => Console.Write(str);
+
+        static void music1()
+        {
+            //Francisco: Below is the code that allows the beat "BountyHunter.wav" to be played in background.
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "SpaceMenu.wav";
+            player.Play();
+            //Francisco: The code ends here for "BountyHunter.wav" background music.
+
+        }
     }
 }
