@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SpaceGameClassLibrary;
-using System.Media; //Francisco: This allows the background music
+using System.Media; 
 
 namespace SpaceGame
 {
@@ -12,6 +12,7 @@ namespace SpaceGame
     {
         static void Main()
         {
+            
             try
             {
                 GameManager gameManager = new GameManager();

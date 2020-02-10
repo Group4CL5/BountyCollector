@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Media;
+using System.Media;//Francisco: This allows the background music
 
 namespace SpaceGameClassLibrary
 {
@@ -45,7 +45,11 @@ namespace SpaceGameClassLibrary
 
         static void BegSetting()//Setting for the beginning of the game.
         {
-            music1();
+           music1();
+
+            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
+            player.Play();
+
             Cwl("=========================\n");
             Cwl("You are Aster Roid, you are known across the Void Empire\n" +
                 "as the one who travels through space to collect bounties. \n" +
@@ -76,14 +80,10 @@ namespace SpaceGameClassLibrary
         static void Cwl(string str = "") => Console.WriteLine(str);
         static void Cw(string str = "") => Console.Write(str);
 
-        static void music1()
+        static void music1() //Francisco: Below is the code that allows the music to be played in background.
         {
-            //Francisco: Below is the code that allows the beat "BountyHunter.wav" to be played in background.
-            SoundPlayer player = new SoundPlayer();
-            player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "SpaceMenu.wav";
+            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
             player.Play();
-            //Francisco: The code ends here for "BountyHunter.wav" background music.
-
         }
     }
 }
