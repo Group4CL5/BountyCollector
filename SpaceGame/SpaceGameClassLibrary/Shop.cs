@@ -8,13 +8,21 @@ namespace SpaceGameClassLibrary
 {
     class Shop
     {
+       
         public static void ShowShop(CoinManager coinManager)
         {
-            Console.WriteLine(coinManager.GetCoins());
-            coinManager.AddCoins(5);
-            Console.WriteLine(coinManager.GetCoins());
+            ItemManager itemManager = new ItemManager();
+            List<Items> items = itemManager.ReturnItems();
+
+            foreach(Items item in items)
+            {
+                Console.WriteLine($"Ship {item.Name} costs {item.Cost}");
+            }
         }
 
-        
+
+
+
+         
     }
 }
