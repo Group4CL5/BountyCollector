@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class RedSand:Planet
+    class PlanetManager:Planet
     {
         private int num1, num2;
         private char op = '+';
