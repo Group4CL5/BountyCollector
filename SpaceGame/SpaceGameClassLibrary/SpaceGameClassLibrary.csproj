@@ -48,8 +48,16 @@
     <Compile Include="Items.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedSand.cs" />
+    <Compile Include="PlanetManager.cs" />
     <Compile Include="Shop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BountyCollector.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpaceMenu.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

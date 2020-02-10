@@ -11,5 +11,24 @@ namespace SpaceGameClassLibrary
         {
             
         }
+
+        class RedSand
+        {
+            
+
+        }
+        class Watergate
+        {
+
+        }
+        class StaticPlanet
+        {
+
+        }
+        class VoidPlanet
+        {
+
+        }
+
     }
 }
