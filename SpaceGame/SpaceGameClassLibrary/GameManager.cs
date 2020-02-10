@@ -10,10 +10,6 @@ namespace SpaceGameClassLibrary
         public GameManager()
         {
             //Shop.ShowShop(coinManager);
-            //Fight fight = new Fight();
-            //MainMenu();
-            //Setting();
-
             MainMenu();
             Console.Clear();
             BegSetting();

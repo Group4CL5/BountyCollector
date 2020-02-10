@@ -1,123 +1,69 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
     class Fight
     {
-        private int _answer, _numInput, _opInput, _num1, _num2;
-        private char _op;
-        private readonly Player player = new Player();
-        private readonly Enemy enemy = new Enemy(5);
-        readonly Random rnd = new Random();
-        private readonly char[] _allOps = { '+', '-', '*', '/' };
-        private readonly bool _rndOp;
-
-        public Fight()
-        {
-            _rndOp = true;
-            DisplayFight();
-        }
+        private int answer, input, num1, num2;
+        private char op;
 
         public Fight(char op)
         {
-            _rndOp = false;
-            this._op = op;
+            this.op = op;
             DisplayFight();
         }
 
         private void DisplayFight()
         {
-            Console.WriteLine($"\n\nPlayer Health: {player.Health}  ===  Enemy Health: {enemy.Health}");
+            generateEquation(out num1, out num2, out answer, op);
+            Console.WriteLine($"The equation is: {num1} {op} {num2}");
+            Console.Write("What is the answer?: ");
+            input = Input();
 
-            if (_rndOp)
-                _op = _allOps[rnd.Next(0, 3)];
-
-            GenerateEquation(out _num1, out _num2, out _answer, _op);
-
-            if (!_rndOp)
-            {
-                Console.WriteLine($"The equation is: {_num1} {_op} {_num2}");
-                _numInput = NumInput();
-            }
-            else
-            {
-                Console.WriteLine($"The equation is: {_num1} _ {_num2} = {_answer}");
-                _opInput = OpInput();
-            }
-
-            if ((_rndOp && _op == _opInput) || _numInput == _answer)
+            if (input == answer)
             {
                 Console.WriteLine("Correct answer!");
-                enemy.LoseHealth(1);
-
-                if (!enemy.IsDead())
-                    DisplayFight();
-                else
-                    Console.WriteLine("The enemy has died!");
+                DisplayFight();
             }
             else
             {
                 Console.WriteLine("Incorrect answer!");
-
-                player.LoseHealth(1);
-
-                if (!player.IsDead())
-                    DisplayFight();
-                else
-                    Console.WriteLine("You have died...");
+                DisplayFight();
             }
         }
         
-        private int NumInput()
+        private int Input()
         {
             string temp;
             int anwr;
             do
             {
-                Console.Write("What is the answer?: ");
                 temp = Console.ReadLine();
-            } while (!int.TryParse(temp, out anwr));
+            } while (int.TryParse(temp, out anwr) && anwr <= 0);
 
             return anwr;
         }
 
-        private char OpInput()
+        private void generateEquation(out int x, out int y, out int answer, char op)
         {
-            string temp;
-            char anwr;
-
-            do
-            {
-                Console.Write("What is the answer?: ");
-                temp = Console.ReadLine();
-            } while (!char.TryParse(temp, out anwr) || !_allOps.Contains(anwr));
-
-            return anwr;
-        }
-
-        private void GenerateEquation(out int x, out int y, out int answer, char op)
-        {
+            Random rnd = new Random();
             x = rnd.Next(1, 10);
 
             do
             {
                 y = rnd.Next(1, 10);
-            } while ((op == '/' && (y > x || (x % y) != 0) || y == 1) || (op == '-' && y > x));
+            } while (op == '/' && y < x);
 
             switch (op)
             {
                 case '+':
                     answer = x + y;
-                    break;
-                case '-':
-                    answer = x - y;
-                    break;
-                case '*':
-                    answer = x * y;
-                    break;
-                case '/':
-                    answer = x / y;
                     break;
                 default:
                     answer = 0;
