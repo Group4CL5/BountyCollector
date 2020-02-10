@@ -21,7 +21,7 @@ namespace SpaceGame
             {
                 GameManager gameManager = new GameManager();
             }
-            catch (Exception ex)
+            catch (Exception ex)// Hello Test
             {
                 Console.WriteLine(ex.Message);
                 Main();

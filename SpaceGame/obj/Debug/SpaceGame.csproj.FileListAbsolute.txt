@@ -29,3 +29,14 @@ C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\o
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\BountyCollector.wav
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceMenu.wav
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceGame.exe.config
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceGame.exe
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceGame.pdb
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceGameClassLibrary.dll
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\bin\Debug\SpaceGameClassLibrary.pdb
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csprojAssemblyReference.cache
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
+C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
