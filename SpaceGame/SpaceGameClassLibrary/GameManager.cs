@@ -45,7 +45,8 @@ namespace SpaceGameClassLibrary
 
         static void BegSetting()//Setting for the beginning of the game.
         {
-           music1();
+            Music background = new Music();
+            Music.menu();
 
             SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
             player.Play();
@@ -80,10 +81,6 @@ namespace SpaceGameClassLibrary
         static void Cwl(string str = "") => Console.WriteLine(str);
         static void Cw(string str = "") => Console.Write(str);
 
-        static void music1() //Francisco: Below is the code that allows the music to be played in background.
-        {
-            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
-            player.Play();
-        }
+       
     }
 }
