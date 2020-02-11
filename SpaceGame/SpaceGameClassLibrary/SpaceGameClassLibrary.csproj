@@ -42,10 +42,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoinManager.cs" />
+    <Compile Include="Fight.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="Hubb.cs" />
+    <Compile Include="ItemManager.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="Music.cs" />
     <Compile Include="Planet.cs" />
+    <Compile Include="PlanetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedSand.cs" />
+    <Compile Include="Shop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BountyCollector.wav" />
+    <Content Include="SpaceMenu.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
