@@ -9,16 +9,19 @@ namespace SpaceGameClassLibrary
     class Shop
     {
        
-        public static void ShowShop(CoinManager coinManager)
+        public static string ShowShop(CoinManager coinManager)
         {
+            string outputText = "";
             ItemManager itemManager = new ItemManager();
-            List<Items> items = itemManager.ReturnItems();
 
-            foreach(Items item in items)
+            foreach(Items item in itemManager.ReturnItems())
             {
-                Console.WriteLine($"Ship {item.Name} costs {item.Cost}");
+                outputText += $"Ship {item.Name} costs {item.Cost}\n";
             }
+
+            return outputText;
         }
+
 
 
 
