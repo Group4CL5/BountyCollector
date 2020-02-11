@@ -6,12 +6,14 @@ namespace SpaceGameClassLibrary
     public class GameManager
     {
         CoinManager coinManager = new CoinManager();
-
+        Music background = new Music();
         public GameManager()
         {
+           
             //Shop.ShowShop(coinManager);
             MainMenu();
             Console.Clear();
+            Music.menu();
             BegSetting();
             //EndSetting();
         }
@@ -45,11 +47,10 @@ namespace SpaceGameClassLibrary
 
         static void BegSetting()//Setting for the beginning of the game.
         {
-            Music background = new Music();
-            Music.menu();
+            
 
-            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
-            player.Play();
+            //SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
+            //player.Play();
 
             Cwl("=========================\n");
             Cwl("You are Aster Roid, you are known across the Void Empire\n" +
