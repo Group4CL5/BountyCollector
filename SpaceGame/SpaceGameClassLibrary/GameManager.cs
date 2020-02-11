@@ -40,6 +40,14 @@ namespace SpaceGameClassLibrary
 
             return text;
         }
+        public string HubbSetting() // everytime you go back to Hubb...
+        {
+            string text = "";
+            text += "==============================================\n";
+            text += "Welcome back to Hubb, the secret rebel planet!\n";
+            text += "==============================================\n";
+            return text;
+        }
         public string RedSandSetting()//Setting upon entering Red Sand.
         {
             string text = "";
