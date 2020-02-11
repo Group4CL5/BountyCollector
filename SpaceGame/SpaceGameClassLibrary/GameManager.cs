@@ -9,10 +9,8 @@ namespace SpaceGameClassLibrary
 
         public string BegSetting()//Setting for the beginning of the game.
         {
-  
             string text = "";
-
-            text += "=========================\n"; 
+            text += "=========================================================\n"; 
             text += "You are Aster Roid, you are known across the Void Empire\n" +
                 "as the one who travels through space to collect bounties. \n" +
                 "You are invited to a secret rebel planet called Hubb. While \n" +
@@ -22,28 +20,78 @@ namespace SpaceGameClassLibrary
                 "imperial control: Red Sand, Watergate, Static, and Void.\n\n" +            
                 "The bounties you collect can be traded in for spaceships. \n" +
                 "For every planet you are going to need a special spaceship. \n";
-            text += "=========================\n";
+            text += "=========================================================\n";
 
             return text;
         }
         public string EndSetting()//Setting for the end of the game.
         {
             string text = "";
-
-            text += "=========================\n";
+            text += "============================================================\n";
             text += "You have returned to Hubb where the planet’s inhabitants are\n" +
                 " grateful. You have just brought an end to the Void Empire and\n" +
                 " have brought peace to the galaxy.\n\n" +
                 " The mayor of Hubb says that you can trade your bounty from \n" +
                 "planet Void for the golden spaceship that can take you to any \n" +
                 "of the 5 planets in the galaxy.\n\n" +
-                "The galaxy has been renamed Matter and everyone lives happily" +
-                " ever after.\n";                
-            text += "=========================\n";
+                "The galaxy has been renamed Asteroid in your honor. " +
+                "everyone lives happily ever after.\n";                         
+            text += "============================================================\n";
 
             return text;
         }
+        public string HubbSetting() // everytime you go back to Hubb...
+        {
+            string text = "";
+            text += "==============================================\n";
+            text += "Welcome back to Hubb, the secret rebel planet!\n";
+            text += "==============================================\n";
+            return text;
+        }
+        public string RedSandSetting()//Setting upon entering Red Sand.
+        {
+            string text = "";
+            text += "============================================================\n";
+            text += "You have entered the desolate planet called Red Sand. \n" +
+                "You are determined to find the boss of this planet called Big Red.\n";
+            text += "============================================================\n";
 
-       
+            return text;
+        }
+        public string WatergateSetting()//Setting upon entering Watergate
+        {
+            string text = "";
+            text += "============================================================\n";
+            text += "You have entered the orderly planet called Watergate where \n" +
+                "the boss Nixon lives. You feel like you're getting watched... \n";               
+            text += "============================================================\n";
+
+            return text;
+
+        }
+        public string StaticSetting()//Setting upon entering Static
+        {
+            string text = "";
+            text += "============================================================\n";
+            text += "You have entered the stormy planet called Static where \n" +
+                "the boss Scorpio lives. You walk cautiously as lightning comes \n" +
+                "crashing down to the ground.\n";
+            text += "============================================================\n";
+
+            return text;
+
+        }
+        public string VoidSetting() //Setting upon entering Void
+        {
+            string text = "";
+            text += "============================================================\n";
+            text += "You have entered the dark planet called Void where " +
+                "the boss Meaty Ore lives. Amidst the dark planet you see a\n" +
+                "temple that is brightly lit. That must be where Meaty is. \n";
+            text += "============================================================\n";
+
+            return text;
+
+        }
     }
 }
