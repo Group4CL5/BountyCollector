@@ -31,7 +31,10 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            WriteMenu();          
+            WriteMenu();
+            Setting(0);
+            Setting();
+            
         }
 
        void WriteMenu()
@@ -50,22 +53,23 @@ namespace SpaceGame
             Console.WriteLine();
             if (choice == "No") Environment.Exit(0);
 
-            Setting(0); // This is going to display the BegSetting.
+          
           
         }
 
-        void Setting(int set)
+        void Setting(int set = 100)
         {
             Console.Clear();
             switch (set)
             {
-                case 0:
-                    Console.WriteLine(gameManager.BegSetting());
+                case 0:                  
+                    Console.WriteLine(gameManager.BegSetting());                   
                     break;
                 default:
                     Console.WriteLine(gameManager.EndSetting());
                     break;
             }
+            Console.ReadKey();
         }
     }
 }
