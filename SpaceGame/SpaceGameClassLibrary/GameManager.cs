@@ -45,8 +45,8 @@ namespace SpaceGameClassLibrary
 
         static void BegSetting()//Setting for the beginning of the game.
         {
-            //Music background = new Music();
-            //Music.menu();
+            Music background = new Music();
+            Music.menu();
 
             SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
             player.Play();
