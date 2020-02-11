@@ -9,6 +9,9 @@ namespace SpaceGameClassLibrary
     class Enemy
     {
         private int _health;
+        public string appearMessage = "";
+        public string name = "";
+
         public int Health
         {
             get => _health;
