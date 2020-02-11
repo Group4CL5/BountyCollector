@@ -5,7 +5,7 @@ namespace SpaceGameClassLibrary
 {
     public class GameManager
     {
-        CoinManager coinManager = new CoinManager();
+        //CoinManager coinManager = new CoinManager();
 
         public string BegSetting()//Setting for the beginning of the game.
         {
