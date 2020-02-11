@@ -13,7 +13,6 @@ namespace SpaceGameClassLibrary
         {
             SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
             player.Play();
-           
         }
     }
 }
