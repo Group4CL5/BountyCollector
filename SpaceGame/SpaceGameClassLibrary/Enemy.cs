@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class Enemy
+    public class Enemy
     {
         private int _health;
         public string appearMessage = "";
