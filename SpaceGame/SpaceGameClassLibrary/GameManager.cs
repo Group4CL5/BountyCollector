@@ -9,12 +9,7 @@ namespace SpaceGameClassLibrary
 
         public string BegSetting()//Setting for the beginning of the game.
         {
-            Music background = new Music();
-            Music.menu();
-
-            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
-            player.Play();
-
+  
             string text = "";
 
             text += "=========================\n"; 

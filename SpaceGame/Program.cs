@@ -11,13 +11,14 @@ namespace SpaceGame
 {
     class Program
     {
+        
         GameManager gameManager = new GameManager();
 
         static void Main()
         {
             
             try
-            {
+            {                               
                 (new Program()).Run();
             }
             catch (Exception ex)// Hello Test
@@ -28,12 +29,15 @@ namespace SpaceGame
 
         }
 
-        void Run()
+        void Run() // This is literally where the sequence will be taking place
         {
             WriteMenu();
+            Setting(0);
+            Setting();
+            
         }
 
-        void WriteMenu()
+       void WriteMenu()
         {
             string text = "";
             Console.WriteLine("Welcome to Bounty Collector!\n" +
@@ -49,21 +53,23 @@ namespace SpaceGame
             Console.WriteLine();
             if (choice == "No") Environment.Exit(0);
 
-            Setting(0);
+          
+          
         }
 
-        void Setting(int set)
+        void Setting(int set = 100)
         {
             Console.Clear();
             switch (set)
             {
-                case 0:
-                    Console.WriteLine(gameManager.BegSetting());
+                case 0:                  
+                    Console.WriteLine(gameManager.BegSetting());                   
                     break;
                 default:
                     Console.WriteLine(gameManager.EndSetting());
                     break;
             }
+            Console.ReadKey();
         }
     }
 }
