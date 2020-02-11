@@ -31,9 +31,9 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            WriteMenu();
-            Setting(0);
-            Setting();
+            WriteMenu();// The syarting menu
+            Setting(0);// this method (0) will display begsetting
+            Setting();// this default method will display the endsetting
             
         }
 
