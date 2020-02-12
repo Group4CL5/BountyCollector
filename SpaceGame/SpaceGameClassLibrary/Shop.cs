@@ -9,7 +9,7 @@ namespace SpaceGameClassLibrary
     class Shop
     {
        
-        public static string ShowShop(CoinManager coinManager)
+        public static string ShowShop(Player player)
         {
             string outputText = "";
             ItemManager itemManager = new ItemManager();
