@@ -20,6 +20,11 @@ namespace SpaceGameClassLibrary
          * create a overload constructor that assigns Op to the passed in operator value also assign the Text value to a welcome message
          *
          * void Method InitializeEnemies() {
+         *
+         *      -- CREATE THREE ENEMY OBJECTS
+         *      -- ENEMY 1 and 2 HAS HEALTH OF 3
+         *      -- ENEMY 3 (BOSS) HAS HEALTH OF 10
+         *
          *      Enemy enemy1 = new Enemy();
          *      enemy1.name = "";
          *      enemy1.appearMessage = "";
