@@ -13,8 +13,7 @@ namespace SpaceGame
     {
         
         GameManager gameManager = new GameManager();
-        Player player = new Player();
-        Shop shop = new Shop;
+        Player player = new Player();      
         SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
         SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
         SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
@@ -35,9 +34,7 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            WriteMenu();// The starting menu
-            
-            SpaceMenu.Play();
+            SpaceMenu.Play(); WriteMenu();// The starting menu          
             Setting(0);// this method (0) will display begsetting
             LoadPlanet();
             //Browse Hubb, Shop
@@ -96,10 +93,38 @@ namespace SpaceGame
             Console.ReadKey();
 
         }
+        void LoadHubb()
+        {
+            Console.WriteLine("============================================================\n");
+            Console.WriteLine("Welcome to rebel planet Hubb! \n" +
+                "This planet is where you can buy, sell, and upgrade items.\n" +
+                "This planet is where you will begin each mission and where \n" +
+                "you will return to after you complete a mission. During the \n" +
+                "missions you will fight various enemies on different planets.\n" +
+                "Now you can choose to browse the shop or to start mission.\n");
+            Console.WriteLine("============================================================\n\n");
+            Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
+                "you will be needing a spaceship to travel to the other planets.\n" +
+                "-----------------\n" +
+                "Choose.\n" +
+                "-----------------\n" +
+                "1. Browse Shop\n" +
+                "2. Start Mission\n" +
+                "-----------------\n");
+           int option = int.Parse(Console.ReadLine());
+            if (option == 1)
+            {
+                CallShop();
+            }
+            else (option == 2)
+            {
+                LoadPlanet();   
+            }
+        }
         void CallShop()
         {
 
-            Showshop()
+            
         }
     }
 }
