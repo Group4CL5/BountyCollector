@@ -14,22 +14,23 @@ namespace SpaceGame
         
         GameManager gameManager = new GameManager();
         Player player = new Player();
-        Shop shop = new Shop;
+        Shop shop = new Shop();
         SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
         SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
         SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
         static void Main()
         {
-            
-            try
-            {                               
-                (new Program()).Run();
-            }
-            catch (Exception ex)// Hello Test
-            {
-                Console.WriteLine(ex.Message);
-                Main();
-            }
+            PlanetManager planetM = new PlanetManager();
+
+            //try
+            //{                               
+            //    (new Program()).Run();
+            //}
+            //catch (Exception ex)// Hello Test
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    Main();
+            //}
 
         }
 
@@ -99,7 +100,7 @@ namespace SpaceGame
         void CallShop()
         {
 
-            Showshop()
+            //Shop.ShowShop();
         }
     }
 }

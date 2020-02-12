@@ -40,7 +40,6 @@ C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\Spa
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
-
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\bin\Debug\BountyCollector.wav
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\bin\Debug\SpaceMenu.wav
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\bin\Debug\SpaceGame.exe.config
@@ -52,6 +51,5 @@ C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollecto
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
-
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\RedSand.wav
-
+C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\bin\Debug\RedSand.wav

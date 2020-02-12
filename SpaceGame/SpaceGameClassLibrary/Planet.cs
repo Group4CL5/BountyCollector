@@ -7,7 +7,7 @@ using System.Media;
 
 namespace SpaceGameClassLibrary
 {
-    class Planet
+    public class Planet
     {
         public char Op;
         public string Text;
@@ -26,7 +26,7 @@ namespace SpaceGameClassLibrary
 
         private void InitializeEnemies(string[,] enemyInfo)
         {
-            for (int i = 0; i < enemyInfo.Length; i++)
+            for (int i = 0; i < enemyInfo.GetLength(0); i++)
             {
                 Enemy enemy = new Enemy
                 {

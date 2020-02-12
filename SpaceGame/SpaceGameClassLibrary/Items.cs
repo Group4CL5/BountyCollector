@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class Items
+    public class Items
     {
         private int _cost = 0;
         private string _name;
