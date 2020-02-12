@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class Shop
+    public class Shop
     {
         ItemManager itemManager;
 

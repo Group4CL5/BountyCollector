@@ -13,15 +13,15 @@ namespace SpaceGame
     {
         
         GameManager gameManager = new GameManager();
-        Player player = new Player();      
+        Player player = new Player();
+        Shop shop = new Shop();
         SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
         SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
         SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
         static void Main()
         {
-            
             try
-            {                               
+            {
                 (new Program()).Run();
             }
             catch (Exception ex)// Hello Test
@@ -123,8 +123,7 @@ namespace SpaceGame
         }
         void CallShop()
         {
-
-            
+            Shop.ShowShop();
         }
     }
 }

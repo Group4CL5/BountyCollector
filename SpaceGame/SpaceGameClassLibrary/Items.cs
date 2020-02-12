@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    
     class Items
     {
         
@@ -14,9 +13,6 @@ namespace SpaceGameClassLibrary
         public string _name;
         public int Cost { get => _cost; set => _cost = value; }
         public string Name { get => _name; set => _name = value;}
-
-        
-
 
     }
 }
