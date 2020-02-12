@@ -36,13 +36,9 @@ namespace SpaceGame
         {
             SpaceMenu.Play(); WriteMenu();// The starting menu          
             Setting(0);// this method (0) will display begsetting
-            LoadPlanet();
+            LoadHubb();
             //Browse Hubb, Shop
             //Go to Red Sand
-            Console.Clear();
-            RedSand.Play();
-            Console.WriteLine("RedSand Setting here");           
-            Console.ReadKey();
             //Back to Hubb, upgrade ship
             //Go to WaterGate
             //Back to Hubb, upgrade ship
@@ -89,12 +85,13 @@ namespace SpaceGame
         {
             Console.Clear();          
             BountyCollector.Play();
-            Console.WriteLine("Loadplanet here");
+            Console.WriteLine("You do not have the proper spaceship to travel to Red Sand.");
             Console.ReadKey();
 
         }
         void LoadHubb()
         {
+            Console.Clear();
             Console.WriteLine("============================================================\n");
             Console.WriteLine("Welcome to rebel planet Hubb! \n" +
                 "This planet is where you can buy, sell, and upgrade items.\n" +
@@ -103,7 +100,12 @@ namespace SpaceGame
                 "missions you will fight various enemies on different planets.\n" +
                 "Now you can choose to browse the shop or to start mission.\n");
             Console.WriteLine("============================================================\n\n");
-            Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
+          
+            int option;
+            string temp;
+            do {
+                Console.Clear();
+                Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
                 "you will be needing a spaceship to travel to the other planets.\n" +
                 "-----------------\n" +
                 "Choose.\n" +
@@ -111,19 +113,42 @@ namespace SpaceGame
                 "1. Browse Shop\n" +
                 "2. Start Mission\n" +
                 "-----------------\n");
-           int option = int.Parse(Console.ReadLine());
+                temp = Console.ReadLine(); }
+            while (!int.TryParse(temp, out option) || option > 2 || option < 1);
+             
             if (option == 1)
             {
                 CallShop();
             }
-            else (option == 2)
+            else if (option == 2)
             {
-                LoadPlanet();   
+                LoadPlanet();
             }
+            else LoadHubb();
         }
         void CallShop()
         {
-            Shop.ShowShop();
+            int choice;
+            do
+
+            {
+                Console.WriteLine($"{shop.ShowShop(player)}");
+                choice = int.Parse(Console.ReadLine());
+                if (choice == shop.ReturnItemCount() + 1)
+                     continue;
+                        
+                if (shop.BuyItem(choice, player))
+                    Console.WriteLine($"The item that you have bought is {shop.ReturnShopItem(choice)}");
+                else Console.WriteLine("You do not have the funds to buy this item.");
+                
+            }
+
+            while (choice != shop.ReturnItemCount() + 1);
+           
+            
+
+
+            
         }
     }
 }

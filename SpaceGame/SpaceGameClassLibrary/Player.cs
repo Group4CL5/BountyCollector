@@ -26,13 +26,13 @@ namespace SpaceGameClassLibrary
         public Player()
         {
             Health = 3;
-            Coins = 0;
+            Coins = 10;
         }
 
         public Player(int hp)
         {
             Health = hp;
-            Coins = 0;
+            Coins = 10;
         }
 
         public void LoseHealth(int hp)
