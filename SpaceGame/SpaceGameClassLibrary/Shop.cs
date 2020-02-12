@@ -8,18 +8,14 @@ namespace SpaceGameClassLibrary
 {
     class Shop
     {
-<<<<<<< HEAD
         ItemManager itemManager;
 
         public Shop()
         {
             itemManager = new ItemManager();
         }
-        public string ShowShop(Player player)
-=======
-       
-        public static string ShowShop(Player player)
->>>>>>> 8a7f6fc7b493ba7be3a7c7be43d136efb5ceb808
+
+        public string ShowShop(Player player)     
         {
             string outputText = "";
             
@@ -33,23 +29,14 @@ namespace SpaceGameClassLibrary
 
         public bool BuyItem(int ItemNum, Player player)
         {
-
-
             if (player.Coins >= itemManager.ReturnItem(ItemNum).Cost)
             {
                 player.Item++;
-                return true;
-
+                return true;                
             }
             else
                 return false;
-
         }
 
-
-
-
-
-         
     }
 }
