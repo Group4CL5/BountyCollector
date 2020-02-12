@@ -15,10 +15,10 @@ namespace SpaceGameClassLibrary
 
         }
 
-        public List<Planet> ReturnPlanet()
-        {
-            return Planet;
-        }
+        //public List<Planet> ReturnPlanet()
+        //{
+        //    return Planet;
+        //}
     }
 }
 
