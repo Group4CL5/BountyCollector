@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace SpaceGameClassLibrary
 {
-    class PlanetManager:Planet
+    class PlanetManager
     {
-        private int num1, num2;
-        private char op = '+';
+        private List<Planet> items = new List<Planet>();
 
-        
+        public PlanetManager()
+        {
+
+        }
+
+        public List<Planet> ReturnPlanet()
+        {
+            return Planet;
+        }
     }
 }
+

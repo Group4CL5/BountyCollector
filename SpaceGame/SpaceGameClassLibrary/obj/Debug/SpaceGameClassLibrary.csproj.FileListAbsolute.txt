@@ -20,3 +20,6 @@ C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\SpaceGameClas
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.pdb
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\BountyCollector.wav
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\SpaceMenu.wav
+C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.csprojAssemblyReference.cache
+C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.dll
+C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.pdb
