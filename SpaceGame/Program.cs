@@ -13,6 +13,8 @@ namespace SpaceGame
     {
         
         GameManager gameManager = new GameManager();
+        Player player = new Player();
+        Shop shop = new Shop;
         SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
         SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
         SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
@@ -93,6 +95,11 @@ namespace SpaceGame
             Console.WriteLine("Loadplanet here");
             Console.ReadKey();
 
+        }
+        void CallShop()
+        {
+
+            Showshop()
         }
     }
 }
