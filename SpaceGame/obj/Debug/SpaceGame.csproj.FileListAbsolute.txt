@@ -40,3 +40,4 @@ C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\Spa
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.csproj.CopyComplete
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.exe
 C:\Users\dlhar\OneDrive\Desktop\Projects\BountyCollector\SpaceGame\obj\Debug\SpaceGame.pdb
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\RedSand.wav

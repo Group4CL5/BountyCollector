@@ -59,6 +59,9 @@
     <Content Include="BountyCollector.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="RedSand.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SpaceMenu.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

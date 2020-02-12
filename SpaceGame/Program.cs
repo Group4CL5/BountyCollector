@@ -13,7 +13,9 @@ namespace SpaceGame
     {
         
         GameManager gameManager = new GameManager();
-
+        SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
+        SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
+        SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
         static void Main()
         {
             
@@ -32,19 +34,23 @@ namespace SpaceGame
         void Run() // This is literally where the sequence will be taking place
         {
             WriteMenu();// The starting menu
-            SoundPlayer player = new SoundPlayer("SpaceMenu.wav");
-            player.Play();
+            
+            SpaceMenu.Play();
             Setting(0);// this method (0) will display begsetting
             LoadPlanet();
             //Browse Hubb, Shop
             //Go to Red Sand
+            Console.Clear();
+            RedSand.Play();
+            Console.WriteLine("RedSand Setting here");           
+            Console.ReadKey();
             //Back to Hubb, upgrade ship
             //Go to WaterGate
             //Back to Hubb, upgrade ship
             //Go to Static
             //Back to Hubb, upgrade ship
             //Go to Void
-            
+
             Setting();// this default method will display the endsetting
             
         }
@@ -82,9 +88,8 @@ namespace SpaceGame
         }
         void LoadPlanet()//This is a test so far.
         {
-            Console.Clear();
-            SoundPlayer player1 = new SoundPlayer("BountyCollector.wav");
-            player1.Play();
+            Console.Clear();          
+            BountyCollector.Play();
             Console.WriteLine("Loadplanet here");
             Console.ReadKey();
 
