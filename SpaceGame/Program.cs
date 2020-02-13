@@ -96,6 +96,7 @@ namespace SpaceGame
                 {
                     Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
                     Fight fight = new Fight(planet.Op);
+                    string answer;
                     do
                     {
                         fight.DisplayFight(planet.Enemies[i], player);
