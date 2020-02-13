@@ -94,7 +94,15 @@ namespace SpaceGame
                 Console.WriteLine(planet.Text);
                 for (int i = 0; i < planet.Enemies.Count; i++)
                 {
-                    Console.WriteLine(planet.Enemies[i].appearMessage);
+                    Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
+                    Fight fight = new Fight(planet.Op);
+                    do
+                    {
+                        fight.DisplayFight(planet.Enemies[i], player);
+                        answer = Console.ReadLine();
+                    }
+                    while (planet.Enemies[i].Health > 0 && player.Health > 0);
+
                 }
                 Console.ReadKey();
                 

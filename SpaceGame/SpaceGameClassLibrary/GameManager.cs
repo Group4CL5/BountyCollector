@@ -14,6 +14,7 @@ namespace SpaceGameClassLibrary
             text += "=========================================================\n"; 
             text += "You are Aster Roid, you are known across the Void Empire\n" +
                 "as the one who travels through space to collect bounties. \n" +
+                "You are also known for your being very good at Mathematics!\n"+
                 "You are invited to a secret rebel planet called Hubb. While \n" +
                 "the inhabitants of Hubb were planning to overthrow the Void \n" +
                 "Empire, they chose you to be the hero. They tasked you to \n" +
