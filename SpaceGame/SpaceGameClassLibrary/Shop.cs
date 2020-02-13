@@ -20,10 +20,15 @@ namespace SpaceGameClassLibrary
             Console.Clear();
             string outputText = $"Welcome to the shop. I am SpaceBeard. How can I help you?\n\n" +
                 $"Your funds: {player.Coins}\n\n";
-            
+          
             for(int i = 0; i < itemManager.ReturnItems().Count; i++)
             {
-                outputText += $"[{i}] Ship {itemManager.ReturnItem(i).Name} || costs {itemManager.ReturnItem(i).Cost} StarCoins\n";
+                outputText += $"[{i}] Ship {itemManager.ReturnItem(i).Name} ";
+
+                if (player.Item < i + 1)
+                    outputText += $"|| costs {itemManager.ReturnItem(i).Cost} StarCoins\n";
+                else
+                    outputText += $"|| Item is already purchased.\n";
             }
             outputText += $"[{itemManager.ReturnItems().Count +1}] Close the shop.";
             return outputText;

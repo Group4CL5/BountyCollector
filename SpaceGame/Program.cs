@@ -13,11 +13,10 @@ namespace SpaceGame
     {
         
         GameManager gameManager = new GameManager();
+        PlanetManager planetManager = new PlanetManager();
         Player player = new Player();
         Shop shop = new Shop();
-        SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");
-        SoundPlayer RedSand = new SoundPlayer("RedSand.wav");
-        SoundPlayer BountyCollector = new SoundPlayer("BountyCollector.wav");
+        SoundPlayer SpaceMenu = new SoundPlayer("SpaceMenu.wav");      
         static void Main()
         {
             try
@@ -88,33 +87,23 @@ namespace SpaceGame
             Console.WriteLine("You are trying to travel....analyzing ship.....\n" +
                                 "Press [Enter]");
             Console.ReadKey();
-            if (player.Item == 1)
+            if (player.Item == gameManager.Bounty)
             {
-                //Load RedSand planet here
+                Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
+                Console.WriteLine(planet.Name);
+                planet.Soundtrack.Play();
+                Console.ReadKey();
+                
             }
 
-            else if (player.Item == 2)
-            {
-                //Load WaterGate planet here
-            }
-
-            else if (player.Item == 3)
-            {
-                //Load Static planet here
-            }
-
-            else if (player.Item == 4)
-            {
-                //Load Void planet here
-            }
             else
-            Console.Clear();
-            Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
-                                 "Press [Enter] to return to the Hubb....");
+            {
+                Console.Clear();
+                Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
+                                     "Press [Enter] to return to the Hubb....");
+            }
             Console.ReadKey();
-            LoadHubb();
            
-
         }
         void LoadHubb()
         {
