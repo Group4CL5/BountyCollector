@@ -48,15 +48,21 @@ namespace SpaceGameClassLibrary
         }
 
         // Check the Operator Answer
-        public bool CheckOpAnswer(char opInput)
+        public bool CheckOpAnswer(string opInput)
         {
-            return _rndOp && _op == opInput;
+            if (char.TryParse(opInput, out var input))
+                return _rndOp && _op == input;
+            else
+                return false;
         }
         
         // Check the Numeric Answer
-        public bool CheckNumAnswer(int numInput)
+        public bool CheckNumAnswer(string numInput)
         {
-            return numInput == _answer;
+            if (int.TryParse(numInput, out var input))
+                return input == _answer;
+            else
+                return false;
         }
 
         private int NumInput()
@@ -102,8 +108,8 @@ namespace SpaceGameClassLibrary
             //         - X % Y does not equal 0
             do
             {
-                y = rnd.Next(1, 10);
-            } while ((op == '/' && (y > x || (x % y) != 0) || y == 1) || (op == '-' && y > x));
+                y = rnd.Next(2, 10);
+            } while ((op == '/' && (y > x || (x % y) != 0)) || (op == '-' && y > x));
 
             switch (op)
             {
