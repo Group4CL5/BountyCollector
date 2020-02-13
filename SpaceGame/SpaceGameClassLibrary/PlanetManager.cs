@@ -20,6 +20,34 @@ namespace SpaceGameClassLibrary
             //    });
             //_planets.Add(planet);
 
+            planet = new Planet(10, '+', "Red Sand", "",
+                new string[,] {{ "Little Red 1", "", "3" },
+                               {"Little Red 2", "", "3" },
+                               {"Big Red", "", "10" }
+                });
+
+            _planets.Add(planet);
+
+            planet = new Planet(20, '-', "Watergate", "",
+                new string[,] {{ "Secret Service Agent 1", "", "3" },
+                               {"Secret Service Agent 2", "", "3" },
+                               {"Nixon", "", "10" }
+                });
+            _planets.Add(planet);
+
+            planet = new Planet(30, '*', "Static", "",
+                new string[,] {{ "Spider 1", "", "3" },
+                               {"Spider 2", "", "3" },
+                               {"Scorpio", "", "10" }
+                });
+            _planets.Add(planet);
+
+            planet = new Planet(40, '/', "Void", "",
+                new string[,] {{ "Thug 1", "", "3" },
+                               {"Thug 2", "", "3" },
+                               {"Meaty Ore", "", "10" }
+                });
+            _planets.Add(planet);
         }
 
         public List<Planet> ReturnPlanet()
