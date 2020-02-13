@@ -36,8 +36,7 @@ namespace SpaceGame
             SpaceMenu.Play(); WriteMenu();// The starting menu          
             Setting(0);// this method (0) will display begsetting
             LoadHubb(); //Browse Hubb, Shop
-            LoadPlanet();//
-            //Go to Red Sand
+            LoadPlanet();//Go to Red Sand
             //Back to Hubb, upgrade ship
             //Go to WaterGate
             //Back to Hubb, upgrade ship
@@ -92,6 +91,11 @@ namespace SpaceGame
                 Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
                 Console.WriteLine(planet.Name);
                 planet.Soundtrack.Play();
+                Console.WriteLine(planet.Text);
+                for (int i = 0; i < planet.Enemies.Count; i++)
+                {
+                    Console.WriteLine(planet.Enemies[i].appearMessage);
+                }
                 Console.ReadKey();
                 
             }

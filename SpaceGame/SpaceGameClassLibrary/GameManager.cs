@@ -50,51 +50,51 @@ namespace SpaceGameClassLibrary
             text += "==============================================\n";
             return text;
         }
-        public string RedSandSetting()//Setting upon entering Red Sand.
-        {
-            string text = "";
-            text += "============================================================\n";
-            text += "You have entered the desolate planet called Red Sand. \n" +
-                "You are determined to find the boss of this planet called Big Red.\n";
-            text += "============================================================\n";
+        //public string RedSandSetting()//Setting upon entering Red Sand.
+        //{
+        //    string text = "";
+        //    text += "============================================================\n";
+        //    text += "You have entered the desolate planet called Red Sand. \n" +
+        //        "You are determined to find the boss of this planet called Big Red.\n";
+        //    text += "============================================================\n";
 
-            return text;
-        }
-        public string WatergateSetting()//Setting upon entering Watergate
-        {
-            string text = "";
-            text += "============================================================\n";
-            text += "You have entered the orderly planet called Watergate where \n" +
-                "the boss Nixon lives. You feel like you're getting watched... \n";               
-            text += "============================================================\n";
+        //    return text;
+       // }
+        //public string WatergateSetting()//Setting upon entering Watergate
+        //{
+        //    string text = "";
+        //    text += "============================================================\n";
+        //    text += "You have entered the orderly planet called Watergate where \n" +
+        //        "the boss Nixon lives. You feel like you're getting watched... \n";               
+        //    text += "============================================================\n";
 
-            return text;
+        //    return text;
 
-        }
-        public string StaticSetting()//Setting upon entering Static
-        {
-            string text = "";
-            text += "============================================================\n";
-            text += "You have entered the stormy planet called Static where \n" +
-                "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
-                "crashing down to the ground.\n";
-            text += "============================================================\n";
+        //}
+        //public string StaticSetting()//Setting upon entering Static
+        //{
+        //    string text = "";
+        //    text += "============================================================\n";
+        //    text += "You have entered the stormy planet called Static where \n" +
+        //        "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
+        //        "crashing down to the ground.\n";
+        //    text += "============================================================\n";
 
-            return text;
+        //    return text;
 
-        }
-        public string VoidSetting() //Setting upon entering Void
-        {
-            string text = "";
-            text += "============================================================\n";
-            text += "You have entered the dark planet called Void where " +
-                "the boss Meaty Ore lives. Amidst the dark planet you see a\n" +
-                "temple that is brightly lit. That must be where the Emperor\n" +
-                "does his bidding.";
-            text += "============================================================\n";
+       // }
+        //public string VoidSetting() //Setting upon entering Void
+        //{
+        //    string text = "";
+        //    text += "============================================================\n";
+        //    text += "You have entered the dark planet called Void where " +
+        //        "the boss Meaty Ore lives. Amidst the dark planet you see a\n" +
+        //        "temple that is brightly lit. That must be where the Emperor\n" +
+        //        "does his bidding.";
+        //    text += "============================================================\n";
 
-            return text;
+        //    return text;
 
-        }
+        //}
     }
 }
