@@ -36,8 +36,8 @@ namespace SpaceGame
         {
             SpaceMenu.Play(); WriteMenu();// The starting menu          
             Setting(0);// this method (0) will display begsetting
-            LoadHubb();
-            //Browse Hubb, Shop
+            LoadHubb(); //Browse Hubb, Shop
+            LoadPlanet();//
             //Go to Red Sand
             //Back to Hubb, upgrade ship
             //Go to WaterGate
@@ -46,15 +46,16 @@ namespace SpaceGame
             //Back to Hubb, upgrade ship
             //Go to Void
 
-            Setting();// this default method will display the endsetting
+            SpaceMenu.Play(); Setting();// this default method will display the endsetting
             
         }
 
        void WriteMenu()
         {
             
-            Console.WriteLine("Welcome to Bounty Collector!\n" +
-                    "----------------------------\n");
+            Console.WriteLine(  "===================================\n" +
+                                 "Welcome to Bounty Collector!\n" +
+                                "===================================\n\n");
             string choice;
             do
             {
@@ -81,12 +82,38 @@ namespace SpaceGame
             }
             Console.ReadKey();
         }
-        void LoadPlanet()//This is a test so far.
+        void LoadPlanet()//This method loads a planet depending on the item (spaceship) that the player has obtained.
         {
             Console.Clear();          
-            BountyCollector.Play();
-            Console.WriteLine("You do not have the proper spaceship to travel to Red Sand.");
+            Console.WriteLine("You are trying to travel....analyzing ship.....\n" +
+                                "Press [Enter]");
             Console.ReadKey();
+            if (player.Item == 1)
+            {
+                //Load RedSand planet here
+            }
+
+            else if (player.Item == 2)
+            {
+                //Load WaterGate planet here
+            }
+
+            else if (player.Item == 3)
+            {
+                //Load Static planet here
+            }
+
+            else if (player.Item == 4)
+            {
+                //Load Void planet here
+            }
+            else
+            Console.Clear();
+            Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
+                                 "Press [Enter] to return to the Hubb....");
+            Console.ReadKey();
+            LoadHubb();
+           
 
         }
         void LoadHubb()
@@ -106,12 +133,12 @@ namespace SpaceGame
             do {
                 Console.Clear();
                 Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
-                "you will be needing a spaceship to travel to the other planets.\n" +
+                "you will be needing a spaceship to travel to the other planets.\n\n" +
                 "-----------------\n" +
                 "Choose.\n" +
                 "-----------------\n" +
-                "1. Browse Shop\n" +
-                "2. Start Mission\n" +
+                "[1] Browse Shop\n" +
+                "[2] Start Mission\n" +
                 "-----------------\n");
                 temp = Console.ReadLine(); }
             while (!int.TryParse(temp, out option) || option > 2 || option < 1);
@@ -125,6 +152,7 @@ namespace SpaceGame
                 LoadPlanet();
             }
             else LoadHubb();
+            LoadHubb();
         }
         void CallShop()
         {
@@ -138,16 +166,22 @@ namespace SpaceGame
                      continue;
                         
                 if (shop.BuyItem(choice, player))
-                    Console.WriteLine($"The item that you have bought is {shop.ReturnShopItem(choice)}");
+                    Console.WriteLine($"The item that you have bought is {shop.ReturnShopItem(choice)}\n" +
+                        $"Press [Enter] to continue...");
+
                 else Console.WriteLine("You do not have the funds to buy this item.");
-                
+                Console.ReadKey();
             }
 
             while (choice != shop.ReturnItemCount() + 1);
            
             
 
-
+            //void ItemAdder(Player player, int a)
+            //{
+            //    a += 
+                    
+            //}
             
         }
     }

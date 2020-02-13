@@ -21,7 +21,8 @@ namespace SpaceGameClassLibrary
                 "imperial control: Red Sand, Watergate, Static, and Void.\n\n" +            
                 "The bounties you collect can be traded in for spaceships. \n" +
                 "For every planet you are going to need a special spaceship. \n";
-            text += "=========================================================\n";
+            text += "=========================================================\n" +
+                "Press [ENTER] to continue...";
 
             return text;
         }
@@ -35,7 +36,7 @@ namespace SpaceGameClassLibrary
                 " The mayor of Hubb says that you can trade your bounty from \n" +
                 "planet Void for the golden spaceship that can take you to any \n" +
                 "of the 5 planets in the galaxy.\n\n" +
-                "The galaxy has been renamed Asteroid in your honor. " +
+                "The galaxy has been renamed Asteroid in your honor.\n " +
                 "everyone lives happily ever after.\n";                         
             text += "============================================================\n";
 
@@ -75,7 +76,7 @@ namespace SpaceGameClassLibrary
             string text = "";
             text += "============================================================\n";
             text += "You have entered the stormy planet called Static where \n" +
-                "the boss Scorpio lives. You walk cautiously as lightning comes \n" +
+                "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
                 "crashing down to the ground.\n";
             text += "============================================================\n";
 
@@ -88,7 +89,8 @@ namespace SpaceGameClassLibrary
             text += "============================================================\n";
             text += "You have entered the dark planet called Void where " +
                 "the boss Meaty Ore lives. Amidst the dark planet you see a\n" +
-                "temple that is brightly lit. That must be where Meaty is. \n";
+                "temple that is brightly lit. That must be where the Emperor\n" +
+                "does his bidding.";
             text += "============================================================\n";
 
             return text;

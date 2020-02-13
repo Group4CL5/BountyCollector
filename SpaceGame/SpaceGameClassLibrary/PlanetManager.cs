@@ -20,7 +20,7 @@ namespace SpaceGameClassLibrary
             //    });
             //_planets.Add(planet);
 
-            planet = new Planet(10, '+', "Red Sand", "",
+            Planet planet = new Planet(10, '+', "Red Sand", "",
                 new string[,] {{ "Little Red 1", "", "3" },
                                {"Little Red 2", "", "3" },
                                {"Big Red", "", "10" }
