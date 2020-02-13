@@ -47,6 +47,14 @@ namespace SpaceGameClassLibrary
             return text;
         }
 
+        public bool InputAnswer(string inputAnswer)
+        {
+            if (_rndOp)
+                return CheckOpAnswer(inputAnswer);
+            else
+                return CheckNumAnswer(inputAnswer);
+        }
+
         // Check the Operator Answer
         public bool CheckOpAnswer(string opInput)
         {
