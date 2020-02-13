@@ -20,7 +20,7 @@ namespace SpaceGameClassLibrary
             //    });
             //_planets.Add(planet);
 
-            Planet planet = new Planet(10, '+', "RedSand", "Red Sand",
+            Planet planet1 = new Planet(20, '+', "RedSand", "Red Sand",
                 "==================================================================\n" +
                 "You have entered the desolate planet called Red Sand. \n" +
                 "You are determined to find the boss of this planet called Big Red.\n"+
@@ -30,8 +30,8 @@ namespace SpaceGameClassLibrary
                                {"Big Red", "I promise you that you will not defeat me easily, I'm going to send you back to your planet.", "10" }
 
                 });
-            _planets.Add(planet);
-            planet = new Planet(20, '-', "Watergate", "Watergate",
+            _planets.Add(planet1);
+            Planet planet2 = new Planet(30, '-', "Watergate", "Watergate",
                 "============================================================\n" +
                 "You have entered the orderly planet called Watergate where \n" +
                 "the boss Nixon lives. You feel like you're getting watched... \n" +
@@ -40,9 +40,9 @@ namespace SpaceGameClassLibrary
                                {"Secret Service Agent 2", "Subtraction was my favorite in class.", "3" },
                                {"Nixon", "I subtracted a lot of things in my life, and I do not regret it.", "10" }
                 });
-            _planets.Add(planet);
+            _planets.Add(planet2);
 
-            planet = new Planet(30, '*', "Static","Static",
+            Planet planet3 = new Planet(40, '*', "RedSand","Static",
                 "=============================================================\n"+
                 "You have entered the stormy planet called Static where \n" +
                 "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
@@ -52,9 +52,20 @@ namespace SpaceGameClassLibrary
                                {"Spider 2", "Im the expert in multiplication.", "3" },
                                {"Scorpio", "I am ex-static to finally meet you, too bad you are going to lose today.", "10" }
                 });
-            _planets.Add(planet);
+            _planets.Add(planet3);
 
-            planet = new Planet(40, '/', "Void", "Void",
+            Planet planet4 = new Planet(50, '/', "RedSand", "CREATE",
+                "============================================================\n" +
+                "NEED TO CREATE" +
+                "============================================================\n",
+                new string[,] {{"Thug 1", "Im actually scared, they said you are really smart.", "3" },
+                               {"Thug 2", "I bet you are not smarter than me.", "3" },
+                               {"Meaty Ore", "Im told that you are the one running around in the galaxy causing a mess. You are never going to leave my planet. ", "10" }
+                });
+
+            _planets.Add(planet4);
+
+            Planet planet5 = new Planet(50, '!', "RedSand", "Void",
                 "============================================================\n" +
                 "You have entered the dark planet called Void where \n" +
                 "the boss Meaty Ore lives. Amidst the dark planet you see a\n" +
@@ -66,7 +77,8 @@ namespace SpaceGameClassLibrary
                                {"Meaty Ore", "Im told that you are the one running around in the galaxy causing a mess. You are never going to leave my planet. ", "10" }
                 });
 
-            _planets.Add(planet);
+            _planets.Add(planet5);
+            
         }
 
         public List<Planet> ReturnPlanets()

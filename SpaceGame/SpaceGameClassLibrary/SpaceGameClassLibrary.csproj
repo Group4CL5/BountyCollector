@@ -56,6 +56,9 @@
   <ItemGroup>
     <Content Include="BountyCollector.wav" />
     <Content Include="SpaceMenu.wav" />
+    <Content Include="Watergate.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

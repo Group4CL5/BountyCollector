@@ -30,13 +30,13 @@ namespace SpaceGameClassLibrary
                 else
                     outputText += $"|| Item is already purchased.\n";
             }
-            outputText += $"[{itemManager.ReturnItems().Count +1}] Close the shop.";
+            outputText += $"[{itemManager.ReturnItems().Count}] Close the shop.";
             return outputText;
         }
 
         public bool BuyItem(int ItemNum, Player player)
         {
-            if (player.Coins >= itemManager.ReturnItem(ItemNum).Cost)
+            if (player.Coins >= itemManager.ReturnItem(ItemNum).Cost && player.Item < ItemNum + 1)
             {
                 player.Item++;
                 player.SubtractCoins(itemManager.ReturnItem(ItemNum).Cost);

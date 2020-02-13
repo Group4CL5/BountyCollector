@@ -19,8 +19,13 @@ namespace SpaceGameClassLibrary
 
         public Fight(char op)
         {
-            _rndOp = false;
-            this._op = op;
+            if (op == '!')
+                _rndOp = true;
+            else
+            {
+                _rndOp = false;
+                this._op = op;
+            }
         }
 
         // Returns a string of the generated equation
@@ -28,13 +33,13 @@ namespace SpaceGameClassLibrary
         {
             string text = "";
 
-            text += $"\n\nPlayer Health: {player.Health}  ===  Enemy Health: {enemy.Health}";
+            text += $"\n\nPlayer Health: {player.Health}  ===  Enemy Health: {enemy.Health}\n\n";
 
             if (_rndOp)
                 _op = _allOps[rnd.Next(0, 3)];
 
             GenerateEquation(out _num1, out _num2, out _answer, _op);
-
+            
             if (!_rndOp)
             {
                 text += $"The equation is: {_num1} {_op} {_num2}";
@@ -49,10 +54,14 @@ namespace SpaceGameClassLibrary
 
         public bool InputAnswer(string inputAnswer)
         {
-            if (_rndOp)
-                return CheckOpAnswer(inputAnswer);
-            else
-                return CheckNumAnswer(inputAnswer);
+      
+            
+                if (_rndOp)
+                    return CheckOpAnswer(inputAnswer);
+                else
+                    return CheckNumAnswer(inputAnswer);
+            
+            
         }
 
         // Check the Operator Answer
@@ -73,34 +82,7 @@ namespace SpaceGameClassLibrary
                 return false;
         }
 
-        private int NumInput()
-        {
-            string temp;
-            int anwr;
-
-            do
-            {
-                Console.Write("What is the answer?: ");
-                temp = Console.ReadLine();
-            } while (!int.TryParse(temp, out anwr));
-
-            return anwr;
-        }
-
-        private char OpInput()
-        {
-            string temp;
-            char anwr;
-
-            do
-            {
-                Console.Write("What is the answer?: ");
-                temp = Console.ReadLine();
-            } while (!char.TryParse(temp, out anwr) || !_allOps.Contains(anwr));
-
-            return anwr;
-        }
-
+       
         // Check the equation
         private void GenerateEquation(out int x, out int y, out int answer, char op)
         {

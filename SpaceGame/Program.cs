@@ -33,12 +33,23 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            SpaceMenu.Play(); WriteMenu();// The starting menu          
+            WriteMenu();// The starting menu          
             Setting(0);// this method (0) will display begsetting
+
+            Console.WriteLine("============================================================\n");
+            Console.WriteLine("Welcome to rebel planet Hubb! \n" +
+                "This planet is where you can buy, sell, and upgrade items.\n" +
+                "This planet is where you will begin each mission and where \n" +
+                "you will return to after you complete a mission. During the \n" +
+                "missions you will fight various enemies on different planets.\n" +
+                "Now you can choose to browse the shop or to start mission.\n");
+            Console.WriteLine("============================================================\n\n");
+
             LoadHubb(); //Browse Hubb, Shop
-            LoadPlanet();//Go to Red Sand
-            //Back to Hubb, upgrade ship
-            //Go to WaterGate
+            //LoadHubb();
+            //LoadPlanet();//Go to Red Sand
+            //SpaceMenu.Play(); gameManager.HubbSetting(); LoadHubb(); //Back to Hubb, upgrade ship
+            //LoadPlanet();//Go to WaterGate
             //Back to Hubb, upgrade ship
             //Go to Static
             //Back to Hubb, upgrade ship
@@ -94,19 +105,53 @@ namespace SpaceGame
                 Console.WriteLine(planet.Text);
                 for (int i = 0; i < planet.Enemies.Count; i++)
                 {
+                    
                     Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
                     Fight fight = new Fight(planet.Op);
                     string answer;
                     do
                     {
-                        fight.DisplayFight(planet.Enemies[i], player);
+                       Console.WriteLine(fight.DisplayFight(planet.Enemies[i], player));
+                        Console.WriteLine("What's your answer Aster?");
                         answer = Console.ReadLine();
+                        try
+                        {
+                            if (fight.InputAnswer(answer))
+                            {
+                                planet.Enemies[i].LoseHealth(1);
+                            }
+                            else player.LoseHealth(1);
+                        }
+                        catch (Exception)
+                        {
+                            continue;
+                        }
                     }
-                    while (planet.Enemies[i].Health > 0 && player.Health > 0);
+                    
 
+                    while (planet.Enemies[i].Health > 0 && player.Health > 0);
+                    if (player.Health <= 0)
+                    {
+                        Console.WriteLine("You are dead, Aster.\n");
+                        Console.WriteLine("Press [Enter] to try again...");
+                        Console.ReadKey();
+                        LoadPlanet();
+
+                    }
+                    else Console.WriteLine(planet.Enemies[i].name + " is dead. \n");
+                    Console.WriteLine("Press [Enter] to continue traversing through planet.");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
+                gameManager.Bounty += 1;
+                player.Health = 3;
+                player.AddCoins(planet.Coins);
+                Console.WriteLine("========================================================\n"+
+                                    "You find no other inhabitants. \n " +
+                                    $"You have cleared {planet.Name} of Imperial rule....\n" +
+                                    "Press [Enter] to collect bounty and return to Hubb...\n"+
+                                  "========================================================");
                 Console.ReadKey();
-                
             }
 
             else
@@ -114,22 +159,27 @@ namespace SpaceGame
                 Console.Clear();
                 Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
                                      "Press [Enter] to return to the Hubb....");
+                Console.ReadKey();
             }
-            Console.ReadKey();
+
+            if (gameManager.Bounty > planetManager.ReturnPlanets().Count)
+                EndGame();
+            else
+                LoadHubb();
            
         }
+
+        void EndGame()
+        {
+            Console.WriteLine(gameManager.EndSetting());
+        }
+
         void LoadHubb()
         {
             Console.Clear();
-            Console.WriteLine("============================================================\n");
-            Console.WriteLine("Welcome to rebel planet Hubb! \n" +
-                "This planet is where you can buy, sell, and upgrade items.\n" +
-                "This planet is where you will begin each mission and where \n" +
-                "you will return to after you complete a mission. During the \n" +
-                "missions you will fight various enemies on different planets.\n" +
-                "Now you can choose to browse the shop or to start mission.\n");
-            Console.WriteLine("============================================================\n\n");
-          
+            SpaceMenu.Play();
+            Console.WriteLine(gameManager.HubbSetting());
+
             int option;
             string temp;
             do {
@@ -154,37 +204,43 @@ namespace SpaceGame
                 LoadPlanet();
             }
             else LoadHubb();
-            LoadHubb();
+          
         }
         void CallShop()
         {
-            int choice;
-            do
-
+            try
             {
-                Console.WriteLine($"{shop.ShowShop(player)}");
-                choice = int.Parse(Console.ReadLine());
-                if (choice == shop.ReturnItemCount() + 1)
-                     continue;
-                        
-                if (shop.BuyItem(choice, player))
-                    Console.WriteLine($"The item that you have bought is {shop.ReturnShopItem(choice)}\n" +
-                        $"Press [Enter] to continue...");
+                int choice;
+                do
 
-                else Console.WriteLine("You do not have the funds to buy this item.");
-                Console.ReadKey();
+                {
+                    Console.WriteLine($"{shop.ShowShop(player)}");
+
+                    choice = int.Parse(Console.ReadLine());
+
+
+                    if (choice == shop.ReturnItemCount())
+                        continue;
+
+                    if (shop.BuyItem(choice, player))
+                        Console.WriteLine($"The item that you have bought is {shop.ReturnShopItem(choice)}\n" +
+                            $"Press [Enter] to continue...");
+                    else
+                        if (player.Item >= choice + 1)
+                            Console.WriteLine($"You already own {shop.ReturnShopItem(choice)}!");
+                        else
+                            Console.WriteLine("You do not have the funds to buy this item.");
+
+                    Console.ReadKey();
+                }
+                while (choice != shop.ReturnItemCount());
+
+                LoadHubb();
             }
-
-            while (choice != shop.ReturnItemCount() + 1);
-           
-            
-
-            //void ItemAdder(Player player, int a)
-            //{
-            //    a += 
-                    
-            //}
-            
+            catch (Exception)
+            {
+                CallShop();
+            }
         }
     }
 }
