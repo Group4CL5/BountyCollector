@@ -35,8 +35,8 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            WriteMenu();// The starting menu          
-            Setting(0);// this method (0) will display begsetting
+            WriteMenu();        // The starting menu          
+            Setting(0);     // this overload constructor (0) will display begsetting
 
             Console.WriteLine("============================================================\n");
             Console.WriteLine("Welcome to rebel planet Hubb! \n" +
@@ -47,17 +47,10 @@ namespace SpaceGame
                 "Now you can choose to browse the shop or to start mission.\n");
             Console.WriteLine("============================================================\n\n");
 
-            LoadHubb(); //Browse Hubb, Shop
-            //LoadHubb();
-            //LoadPlanet();//Go to Red Sand
-            //SpaceMenu.Play(); gameManager.HubbSetting(); LoadHubb(); //Back to Hubb, upgrade ship
-            //LoadPlanet();//Go to WaterGate
-            //Back to Hubb, upgrade ship
-            //Go to Static
-            //Back to Hubb, upgrade ship
-            //Go to Void
+            LoadHubb();
 
-            SpaceMenu.Play(); Setting();// this default method will display the endsetting
+            SpaceMenu.Play(); 
+            Setting();          // the default constructor will display the endsetting
             
         }
 
@@ -120,7 +113,7 @@ namespace SpaceGame
                     Console.WriteLine("You start searching for bounty.");
                     foreach (var enemy in planet.Enemies)
                     {
-                        Console.WriteLine(enemy.name + ": " + enemy.appearMessage);
+                        Console.WriteLine(enemy.Name + ": " + enemy.AppearMessage);
                         Fight fight = new Fight(planet.Op);
                         string answer;
                         do
@@ -134,9 +127,9 @@ namespace SpaceGame
                                 enemy.LoseHealth(1);
                             }
                             else player.LoseHealth(1);
-                        } while (enemy.Health > 0 && player.Health > 0);
+                        } while (!enemy.IsDead() && player.IsDead());
 
-                        if (player.Health <= 0)
+                        if (player.IsDead())
                         {
                             Console.WriteLine("You are dead, Aster.\n");
                             Console.WriteLine("Press [Enter] to try again...");
@@ -144,7 +137,7 @@ namespace SpaceGame
                             LoadPlanet();
 
                         }
-                        else Console.WriteLine(enemy.name + " is dead. \n");
+                        else Console.WriteLine(enemy.Name + " is dead. \n");
 
                         Console.WriteLine("Press [Enter] to continue traversing through planet.");
                         Console.ReadKey();

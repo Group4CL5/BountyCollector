@@ -4,10 +4,6 @@
  * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
  */
 
-
-using System;
-using System.Media;//Francisco: This allows the background music
-
 namespace SpaceGameClassLibrary
 {
     public class GameManager

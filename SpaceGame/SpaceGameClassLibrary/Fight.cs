@@ -6,8 +6,6 @@
 
 
 using System;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
 
 namespace SpaceGameClassLibrary
 {
@@ -15,7 +13,7 @@ namespace SpaceGameClassLibrary
     {
         private int _answer, _num1, _num2;
         private char _op;
-        readonly Random rnd = new Random();
+        private readonly Random _rnd = new Random();
         private readonly char[] _allOps = { '+', '-', '*', '/' };
         private readonly bool _rndOp;
 
@@ -43,7 +41,7 @@ namespace SpaceGameClassLibrary
             text += $"\n\nPlayer Health: {player.Health}  ===  Enemy Health: {enemy.Health}\n\n";
 
             if (_rndOp)
-                _op = _allOps[rnd.Next(0, 3)];
+                _op = _allOps[_rnd.Next(0, 3)];
 
             GenerateEquation(out _num1, out _num2, out _answer, _op);
             
@@ -90,7 +88,7 @@ namespace SpaceGameClassLibrary
         // Check the equation
         private void GenerateEquation(out int x, out int y, out int answer, char op)
         {
-            x = rnd.Next(2, 10);
+            x = _rnd.Next(2, 10);
 
             // Keep generating value Y if
             //      Division:
@@ -102,7 +100,7 @@ namespace SpaceGameClassLibrary
             //         - X % Y does not equal 0
             do
             {
-                y = rnd.Next(1, 10);
+                y = _rnd.Next(1, 10);
             } while ((op == '/' && (y > x || (x % y) != 0)) || (op == '-' && y > x));
 
             switch (op)
