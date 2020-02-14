@@ -1,5 +1,8 @@
-﻿using System;
-using System.Media;//Francisco: This allows the background music
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
 
 namespace SpaceGameClassLibrary
 {
@@ -14,12 +17,13 @@ namespace SpaceGameClassLibrary
             text += "=========================================================\n"; 
             text += "You are Aster Roid, you are known across the Void Empire\n" +
                 "as the one who travels through space to collect bounties. \n" +
-                "You are also known for your being very good at Mathematics!\n"+
+                "You are also known for being very good at Mathematics!\n"+
                 "You are invited to a secret rebel planet called Hubb. While \n" +
                 "the inhabitants of Hubb were planning to overthrow the Void \n" +
                 "Empire, they chose you to be the hero. They tasked you to \n" +
-                "collect bounties from the four other planets that are under \n" +
-                "imperial control: Red Sand, Watergate, Static, and Void.\n\n" +            
+                "collect bounties from the five other planets that are under \n" +
+                "imperial control: Red Sand, Watergate, Static, Illusion and \n" +            
+                "Void.\n\n" +
                 "The bounties you collect can be traded in for spaceships. \n" +
                 "For every planet you are going to need a special spaceship. \n";
             text += "=========================================================\n" +
@@ -34,9 +38,7 @@ namespace SpaceGameClassLibrary
             text += "You have returned to Hubb where the planet’s inhabitants are\n" +
                 " grateful. You have just brought an end to the Void Empire and\n" +
                 " have brought peace to the galaxy.\n\n" +
-                " The mayor of Hubb says that you can trade your bounty from \n" +
-                "planet Void for the golden spaceship that can take you to any \n" +
-                "of the 5 planets in the galaxy.\n\n" +
+                "The mayor of Hubb awards you a million StarCoins. You are rich!"+
                 "The galaxy has been renamed Asteroid in your honor.\n " +
                 "everyone lives happily ever after.\n";                         
             text += "============================================================\n";
@@ -51,6 +53,20 @@ namespace SpaceGameClassLibrary
             text += "==============================================\n";
             return text;
         }
+
+        public string StartHubb()
+        {
+            string text = "============================================================\n";
+            text += "Welcome to rebel planet Hubb! \n" +
+                      "This planet is where you can buy, sell, and upgrade items.\n" +
+                      "This planet is where you will begin each mission and where \n" +
+                      "you will return to after you complete a mission. During the \n" +
+                      "missions you will fight various enemies on different planets.\n" +
+                      "Now you can choose to browse the shop or to start mission.\n";
+            text += "============================================================\n\n";
+            return text;
+        }
+
         //public string RedSandSetting()//Setting upon entering Red Sand.
         //{
         //    string text = "";

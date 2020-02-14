@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
+
 
 namespace SpaceGameClassLibrary
 {
     public class Player
     {
-        private int _health;
-        private int _coins;
         public int Item = 0;
 
-        public int Health
-        {
-            get => _health;
-            set => _health = value;
-        }
-        public int Coins
-        {
-            get => _coins;
-            set => _coins = value;
-        }
+        public int Health { get; set; }
+
+        public int Coins { get; set; }
 
         public Player()
         {
@@ -37,12 +29,17 @@ namespace SpaceGameClassLibrary
 
         public void LoseHealth(int hp)
         {
-            _health -= hp;
+            Health -= hp;
+        }
+
+        public void ResetHealth()
+        {
+            Health = 3;
         }
 
         public bool IsDead()
         {
-            if (_health <= 0) return true;
+            if (Health <= 0) return true;
 
             return false;
         }

@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
+
+
+using System;
 using SpaceGameClassLibrary;
 using System.Media; 
 
@@ -33,29 +35,15 @@ namespace SpaceGame
 
         void Run() // This is literally where the sequence will be taking place
         {
-            WriteMenu();// The starting menu          
-            Setting(0);// this method (0) will display begsetting
+            WriteMenu();        // The starting menu          
+            Setting(0);     // this overload constructor (0) will display begsetting
 
-            Console.WriteLine("============================================================\n");
-            Console.WriteLine("Welcome to rebel planet Hubb! \n" +
-                "This planet is where you can buy, sell, and upgrade items.\n" +
-                "This planet is where you will begin each mission and where \n" +
-                "you will return to after you complete a mission. During the \n" +
-                "missions you will fight various enemies on different planets.\n" +
-                "Now you can choose to browse the shop or to start mission.\n");
-            Console.WriteLine("============================================================\n\n");
+            
 
-            LoadHubb(); //Browse Hubb, Shop
-            //LoadHubb();
-            //LoadPlanet();//Go to Red Sand
-            //SpaceMenu.Play(); gameManager.HubbSetting(); LoadHubb(); //Back to Hubb, upgrade ship
-            //LoadPlanet();//Go to WaterGate
-            //Back to Hubb, upgrade ship
-            //Go to Static
-            //Back to Hubb, upgrade ship
-            //Go to Void
+            LoadHubb(true);
 
-            SpaceMenu.Play(); Setting();// this default method will display the endsetting
+            SpaceMenu.Play(); 
+            Setting();          // the default constructor will display the endsetting
             
         }
 
@@ -63,7 +51,7 @@ namespace SpaceGame
         {
             
             Console.WriteLine(  "===================================\n" +
-                                 "Welcome to Bounty Collector!\n" +
+                                "    Welcome to Bounty Collector!    \n" +
                                 "===================================\n\n");
             string choice;
             do
@@ -91,90 +79,100 @@ namespace SpaceGame
             }
             Console.ReadKey();
         }
-        void LoadPlanet()//This method loads a planet depending on the item (spaceship) that the player has obtained.
+
+        void LoadPlanet() //This method loads a planet depending on the item (spaceship) that the player has obtained.
         {
             Console.Clear();
-            Console.WriteLine("========================================================\n" +
-                               "You are trying to travel....analyzing ship.....\n");
-                  
-            
-            if (player.Item == gameManager.Bounty)
+
+
+            Console.WriteLine($"Your ship has the required components for traveling to {planet.Name}.\n" +
+                                $"You enter your spaceship and start navigating through space.....\n" +
+                                $"========================================================\n" + 
+                                "Press [Enter]");
+            Console.ReadKey();
+            Console.Clear();
+            planet.Soundtrack.Play();
+            Console.WriteLine(planet.Text);
+            Console.WriteLine("Is that an enemy approaching? \n" +
+                                "Press [Enter]");
+            Console.ReadKey();
+            Console.Clear();
+            for (int i = 0; i < planet.Enemies.Count; i++)
             {
-                Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
+                
+                if (player.Item == gameManager.Bounty)
 
-                Console.WriteLine($"Your ship has the required components for travelling to {planet.Name}.\n" +
-                                  $"You enter your spaceship and start navigating through space.....\n" +
-                                  $"========================================================\n" + 
-                                  "Press [Enter]");
-                Console.ReadKey();
-                Console.Clear();
-                planet.Soundtrack.Play();
-                Console.WriteLine(planet.Text);
-                Console.WriteLine("You start searching for bounty.");
-                for (int i = 0; i < planet.Enemies.Count; i++)
                 {
-                    
-                    Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
-                    Fight fight = new Fight(planet.Op);
-                    string answer;
-                    do
-                    {
-                       Console.WriteLine(fight.DisplayFight(planet.Enemies[i], player));
-                        Console.WriteLine("What's your answer Aster?");
-                        answer = Console.ReadLine();
-                        try
-                        {
-                            if (fight.InputAnswer(answer))
-                            {
-                                planet.Enemies[i].LoseHealth(1);
-                            }
-                            else player.LoseHealth(1);
-                        }
-                        catch (Exception)
-                        {
-                            continue;
-                        }
-                    }
-                    
+                    player.ResetHealth();
+                    Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
 
-                    while (planet.Enemies[i].Health > 0 && player.Health > 0);
-                    if (player.Health <= 0)
-                    {
-                        Console.WriteLine("You are dead, Aster.\n");
-                        Console.WriteLine("Press [Enter] to try again...");
-                        Console.ReadKey();
-                        LoadPlanet();
-
-                    }
-                    else Console.WriteLine(planet.Enemies[i].name + " is dead. \n");
-                    Console.WriteLine("Press [Enter] to continue traversing through planet.");
+                    Console.WriteLine($"Your ship has the required components for travelling to {planet.Name}.\n" +
+                                      $"You enter your spaceship and start navigating through space.....\n" +
+                                      $"========================================================\n" + 
+                                      "Press [Enter]");
                     Console.ReadKey();
                     Console.Clear();
+                    planet.Soundtrack.Play();
+                    Console.WriteLine(planet.Text);
+                    Console.WriteLine("You start searching for bounty.");
+                    foreach (var enemy in planet.Enemies)
+                    {
+                        Console.WriteLine(enemy.Name + ": " + enemy.AppearMessage);
+                        Fight fight = new Fight(planet.Op);
+                        string answer;
+                        do
+                        {
+                            Console.WriteLine(fight.DisplayFight(enemy, player));
+                            Console.WriteLine("What's your answer Aster?");
+                            answer = Console.ReadLine();
+
+                            if (fight.InputAnswer(answer))
+                            {
+                                enemy.LoseHealth(1);
+                            }
+                            else player.LoseHealth(1);
+                        } while (!enemy.IsDead() && !player.IsDead());
+
+                        if (player.IsDead())
+                        {
+                            Console.WriteLine("You are dead, Aster.\n");
+                            Console.WriteLine("Press [Enter] to try again...");
+                            Console.ReadKey();
+                            LoadPlanet();
+
+                        }
+                        else Console.WriteLine(enemy.Name + " is dead. \n");
+
+                        Console.WriteLine("Press [Enter] to continue traversing through planet.");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                    gameManager.Bounty += 1;
+                    player.AddCoins(planet.Coins);
+                    Console.WriteLine("========================================================\n" +
+                                      "You find no other inhabitants. \n " +
+                                      $"You have cleared {planet.Name} of imperial rule....\n" +
+                                      "Press [Enter] to collect bounty and return to Hubb...\n" +
+                                      "========================================================");
+                    Console.ReadKey();
                 }
-                gameManager.Bounty += 1;
-                player.Health = 3;
-                player.AddCoins(planet.Coins);
-                Console.WriteLine("========================================================\n"+
-                                    "You find no other inhabitants. \n " +
-                                    $"You have cleared {planet.Name} of Imperial rule....\n" +
-                                    "Press [Enter] to collect bounty and return to Hubb...\n"+
-                                  "========================================================");
-                Console.ReadKey();
-            }
 
-            else
-            {
-                Console.Clear();
-                Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
-                                     "Press [Enter] to return to the Hubb....");
-                Console.ReadKey();
-            }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("==================================================================\n" +
+                                      "You do not have the proper spaceship to travel to the next planet.\n" +
+                                      "==================================================================\n" +
+                                       "Press [Enter] to return to the Hubb....");
+                    Console.ReadKey();
+                }
 
-            if (gameManager.Bounty > planetManager.ReturnPlanets().Count)
-                EndGame();
-            else
-                LoadHubb();
-           
+                if (gameManager.Bounty > planetManager.ReturnPlanets().Count)
+                    EndGame();
+                else
+                    LoadHubb();
+
+            }
         }
 
         void EndGame()
@@ -182,24 +180,29 @@ namespace SpaceGame
             Console.WriteLine(gameManager.EndSetting());
         }
 
-        void LoadHubb()
+        void LoadHubb(bool start = false)
         {
-            Console.Clear();
             SpaceMenu.Play();
-            Console.WriteLine(gameManager.HubbSetting());
+            Console.Clear();
+            if (start)
+                Console.WriteLine(gameManager.StartHubb());
+            else
+                Console.WriteLine(gameManager.HubbSetting());
 
             int option;
             string temp;
             do {
-                Console.Clear();
-                Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
-                "you will be needing a spaceship to travel to the other planets.\n\n" +
-                "-----------------\n" +
-                "Choose.\n" +
-                "-----------------\n" +
-                "[1] Browse Shop\n" +
-                "[2] Start Mission\n" +
-                "-----------------\n");
+
+                Console.WriteLine("==================================================================\n" +
+                                  "What would you do? I recommend you go to the shop. \n" +
+                                  "you will be needing a special spaceship for each planet.\n\n" +
+                                  "==================================================================\n" +                             
+                                  "Choose.\n" +
+                                  "-----------------\n" +
+                                  "[1] Browse Shop\n" +
+                                  "[2] Start Mission\n" +
+                                  "-----------------\n");
+
                 temp = Console.ReadLine(); }
             while (!int.TryParse(temp, out option) || option > 2 || option < 1);
              
@@ -219,13 +222,16 @@ namespace SpaceGame
             try
             {
                 int choice;
-                do
 
+                do
                 {
                     Console.WriteLine($"{shop.ShowShop(player)}");
 
-                    choice = int.Parse(Console.ReadLine());
-
+                    string temp;
+                    do
+                    {
+                        temp = Console.ReadLine();
+                    } while (!int.TryParse(temp, out choice));
 
                     if (choice == shop.ReturnItemCount())
                         continue;

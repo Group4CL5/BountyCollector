@@ -22,3 +22,4 @@ C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollecto
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.dll
 C:\Users\tyler\OneDrive\Documents\Visual Studio 2019\MSSAProjects\BountyCollector\SpaceGame\SpaceGameClassLibrary\obj\Debug\SpaceGameClassLibrary.pdb
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\Watergate.wav
+C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\SpaceGameClassLibrary\bin\Debug\Watergate.wav

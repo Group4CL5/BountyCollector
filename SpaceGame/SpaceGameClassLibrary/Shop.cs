@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
+
+
+using System;
 
 namespace SpaceGameClassLibrary
 {
@@ -18,8 +21,13 @@ namespace SpaceGameClassLibrary
         public string ShowShop(Player player)     
         {
             Console.Clear();
-            string outputText = $"Welcome to the shop. I am SpaceBeard. How can I help you?\n\n" +
-                $"Your funds: {player.Coins}\n\n";
+            string outputText = $"===============================================================\n" +
+                                $"Welcome to the shop. I am SpaceBeard. How can I help you?\n" +
+                                $"===============================================================\n" +
+                                $"                                 ------------\n" +
+                                $"The bounty you possess is worth: {player.Coins} StarCoins\n" +
+                                $"                                 ------------\n\n" ;
+
           
             for(int i = 0; i < itemManager.ReturnItems().Count; i++)
             {
@@ -34,12 +42,12 @@ namespace SpaceGameClassLibrary
             return outputText;
         }
 
-        public bool BuyItem(int ItemNum, Player player)
+        public bool BuyItem(int itemNum, Player player)
         {
-            if (player.Coins >= itemManager.ReturnItem(ItemNum).Cost && player.Item < ItemNum + 1)
+            if (player.Coins >= itemManager.ReturnItem(itemNum).Cost && player.Item < itemNum + 1)
             {
                 player.Item++;
-                player.SubtractCoins(itemManager.ReturnItem(ItemNum).Cost);
+                player.SubtractCoins(itemManager.ReturnItem(itemNum).Cost);
                 return true;                
             }
             else
