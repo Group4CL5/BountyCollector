@@ -93,16 +93,24 @@ namespace SpaceGame
         }
         void LoadPlanet()//This method loads a planet depending on the item (spaceship) that the player has obtained.
         {
-            Console.Clear();          
-            Console.WriteLine("You are trying to travel....analyzing ship.....\n" +
-                                "Press [Enter]");
-            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("========================================================\n" +
+                               "You are trying to travel....analyzing ship.....\n");
+                  
+            
             if (player.Item == gameManager.Bounty)
             {
                 Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
-                Console.WriteLine(planet.Name);
+
+                Console.WriteLine($"Your ship has the required components for travelling to {planet.Name}.\n" +
+                                  $"You enter your spaceship and start navigating through space.....\n" +
+                                  $"========================================================\n" + 
+                                  "Press [Enter]");
+                Console.ReadKey();
+                Console.Clear();
                 planet.Soundtrack.Play();
                 Console.WriteLine(planet.Text);
+                Console.WriteLine("You start searching for bounty.");
                 for (int i = 0; i < planet.Enemies.Count; i++)
                 {
                     
