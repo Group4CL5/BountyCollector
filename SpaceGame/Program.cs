@@ -38,16 +38,9 @@ namespace SpaceGame
             WriteMenu();        // The starting menu          
             Setting(0);     // this overload constructor (0) will display begsetting
 
-            Console.WriteLine("============================================================\n");
-            Console.WriteLine("Welcome to rebel planet Hubb! \n" +
-                "This planet is where you can buy, sell, and upgrade items.\n" +
-                "This planet is where you will begin each mission and where \n" +
-                "you will return to after you complete a mission. During the \n" +
-                "missions you will fight various enemies on different planets.\n" +
-                "Now you can choose to browse the shop or to start mission.\n");
-            Console.WriteLine("============================================================\n\n");
+            
 
-            LoadHubb();
+            LoadHubb(true);
 
             SpaceMenu.Play(); 
             Setting();          // the default constructor will display the endsetting
@@ -100,6 +93,7 @@ namespace SpaceGame
 
                 if (player.Item == gameManager.Bounty)
                 {
+                    player.ResetHealth();
                     Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
 
                     Console.WriteLine($"Your ship has the required components for travelling to {planet.Name}.\n" +
@@ -127,7 +121,7 @@ namespace SpaceGame
                                 enemy.LoseHealth(1);
                             }
                             else player.LoseHealth(1);
-                        } while (!enemy.IsDead() && player.IsDead());
+                        } while (!enemy.IsDead() && !player.IsDead());
 
                         if (player.IsDead())
                         {
@@ -144,7 +138,6 @@ namespace SpaceGame
                         Console.Clear();
                     }
                     gameManager.Bounty += 1;
-                    player.Health = 3;
                     player.AddCoins(planet.Coins);
                     Console.WriteLine("========================================================\n" +
                                       "You find no other inhabitants. \n " +
@@ -179,16 +172,18 @@ namespace SpaceGame
             Console.WriteLine(gameManager.EndSetting());
         }
 
-        void LoadHubb()
+        void LoadHubb(bool start = false)
         {
-            Console.Clear();
             SpaceMenu.Play();
-            Console.WriteLine(gameManager.HubbSetting());
+            Console.Clear();
+            if (start)
+                Console.WriteLine(gameManager.StartHubb());
+            else
+                Console.WriteLine(gameManager.HubbSetting());
 
             int option;
             string temp;
             do {
-                Console.Clear();
                 Console.WriteLine("What would you do? I recommend you go to the shop first, \n" +
                 "you will be needing a spaceship to travel to the other planets.\n\n" +
                 "-----------------\n" +
@@ -225,7 +220,7 @@ namespace SpaceGame
                     do
                     {
                         temp = Console.ReadLine();
-                    } while (int.TryParse(temp, out choice));
+                    } while (!int.TryParse(temp, out choice));
 
                     if (choice == shop.ReturnItemCount())
                         continue;

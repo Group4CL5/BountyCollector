@@ -54,6 +54,20 @@ namespace SpaceGameClassLibrary
             text += "==============================================\n";
             return text;
         }
+
+        public string StartHubb()
+        {
+            string text = "============================================================\n";
+            text += "Welcome to rebel planet Hubb! \n" +
+                      "This planet is where you can buy, sell, and upgrade items.\n" +
+                      "This planet is where you will begin each mission and where \n" +
+                      "you will return to after you complete a mission. During the \n" +
+                      "missions you will fight various enemies on different planets.\n" +
+                      "Now you can choose to browse the shop or to start mission.\n";
+            text += "============================================================\n\n";
+            return text;
+        }
+
         //public string RedSandSetting()//Setting upon entering Red Sand.
         //{
         //    string text = "";
