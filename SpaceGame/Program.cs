@@ -140,8 +140,8 @@ namespace SpaceGame
                     gameManager.Bounty += 1;
                     player.AddCoins(planet.Coins);
                     Console.WriteLine("========================================================\n" +
-                                      "You find no other inhabitants. \n " +
-                                      $"You have cleared {planet.Name} of Imperial rule....\n" +
+                                      "You find no other inhabitants.\n " +
+                                      $"You have cleared {planet.Name} of imperial rule....\n" +
                                       "Press [Enter] to collect bounty and return to Hubb...\n" +
                                       "========================================================");
                     Console.ReadKey();

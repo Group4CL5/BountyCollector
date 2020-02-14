@@ -46,7 +46,7 @@ namespace SpaceGameClassLibrary
                 });
             _planets.Add(planet2);
 
-            Planet planet3 = new Planet(40, '*', "RedSand","Static",
+            Planet planet3 = new Planet(40, '*', "BountyCollector","Static",
                 "=============================================================\n"+
                 "You have entered the stormy planet called Static where \n" +
                 "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
@@ -58,7 +58,7 @@ namespace SpaceGameClassLibrary
                 });
             _planets.Add(planet3);
 
-            Planet planet4 = new Planet(50, '/', "RedSand", "Illusion",
+            Planet planet4 = new Planet(50, '/', "Illusion", "Illusion",
                 "================================================================\n" +
                 "You have entered the tricky planet called Illusion. Nothing \n" +
                 "seems real. You try to stay focused and keep your wits about you \n" +
@@ -70,7 +70,7 @@ namespace SpaceGameClassLibrary
 
             _planets.Add(planet4);
 
-            Planet planet5 = new Planet(50, '!', "RedSand", "Void",
+            Planet planet5 = new Planet(50, '!', "Void", "Void",
                 "============================================================\n" +
                 "You have entered the dark planet called Void where \n" +
                 "Meaty Ore dwells. Amidst the dark planet you see a\n" +

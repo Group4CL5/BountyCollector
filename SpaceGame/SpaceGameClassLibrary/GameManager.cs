@@ -36,11 +36,11 @@ namespace SpaceGameClassLibrary
             string text = "";
             text += "============================================================\n";
             text += "You have returned to Hubb where the planet’s inhabitants are\n" +
-                " grateful. You have just brought an end to the Void Empire and\n" +
-                " have brought peace to the galaxy.\n\n" +
-                "The mayor of Hubb awards you a million StarCoins. You are rich!"+
+                " grateful. Your math skills has brought an end to the Void Empire \n" +
+                "and peace to the galaxy.\n\n" +
+                "The mayor of Hubb awards you a million StarCoins. You are rich!\n"+
                 "The galaxy has been renamed Asteroid in your honor.\n " +
-                "everyone lives happily ever after.\n";                         
+                "Everyone lives happily ever after.\n";                         
             text += "============================================================\n";
 
             return text;
