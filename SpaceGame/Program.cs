@@ -84,31 +84,21 @@ namespace SpaceGame
         {
             Console.Clear();
 
-
-            Console.WriteLine($"Your ship has the required components for traveling to {planet.Name}.\n" +
-                                $"You enter your spaceship and start navigating through space.....\n" +
-                                $"========================================================\n" + 
-                                "Press [Enter]");
-            Console.ReadKey();
-            Console.Clear();
-            planet.Soundtrack.Play();
-            Console.WriteLine(planet.Text);
-            Console.WriteLine("Is that an enemy approaching? \n" +
-                                "Press [Enter]");
-            Console.ReadKey();
-            Console.Clear();
-            for (int i = 0; i < planet.Enemies.Count; i++)
+            try
             {
-                
-                if (player.Item == gameManager.Bounty)
+                Console.WriteLine("========================================================\n" +
+                                   "You are trying to travel....analyzing ship.....\n" +
+                                   "Press [Enter]\n");
+                Console.ReadKey();
 
+                if (player.Item == gameManager.Bounty)
                 {
                     player.ResetHealth();
                     Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
 
                     Console.WriteLine($"Your ship has the required components for travelling to {planet.Name}.\n" +
                                       $"You enter your spaceship and start navigating through space.....\n" +
-                                      $"========================================================\n" + 
+                                      $"========================================================\n" +
                                       "Press [Enter]");
                     Console.ReadKey();
                     Console.Clear();
@@ -151,7 +141,7 @@ namespace SpaceGame
                     player.AddCoins(planet.Coins);
                     Console.WriteLine("========================================================\n" +
                                       "You find no other inhabitants. \n " +
-                                      $"You have cleared {planet.Name} of imperial rule....\n" +
+                                      $"You have cleared {planet.Name} of Imperial rule....\n" +
                                       "Press [Enter] to collect bounty and return to Hubb...\n" +
                                       "========================================================");
                     Console.ReadKey();
@@ -160,10 +150,8 @@ namespace SpaceGame
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("==================================================================\n" +
-                                      "You do not have the proper spaceship to travel to the next planet.\n" +
-                                      "==================================================================\n" +
-                                       "Press [Enter] to return to the Hubb....");
+                    Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
+                                      "Press [Enter] to return to the Hubb....");
                     Console.ReadKey();
                 }
 
@@ -172,6 +160,10 @@ namespace SpaceGame
                 else
                     LoadHubb();
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -192,6 +184,7 @@ namespace SpaceGame
             int option;
             string temp;
             do {
+
 
                 Console.WriteLine("==================================================================\n" +
                                   "What would you do? I recommend you go to the shop. \n" +
