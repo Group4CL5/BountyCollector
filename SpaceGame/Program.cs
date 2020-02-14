@@ -6,11 +6,6 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SpaceGameClassLibrary;
 using System.Media; 
 
@@ -133,18 +128,12 @@ namespace SpaceGame
                             Console.WriteLine(fight.DisplayFight(enemy, player));
                             Console.WriteLine("What's your answer Aster?");
                             answer = Console.ReadLine();
-                            try
+
+                            if (fight.InputAnswer(answer))
                             {
-                                if (fight.InputAnswer(answer))
-                                {
-                                    enemy.LoseHealth(1);
-                                }
-                                else player.LoseHealth(1);
+                                enemy.LoseHealth(1);
                             }
-                            catch (Exception)
-                            {
-                                continue;
-                            }
+                            else player.LoseHealth(1);
                         } while (enemy.Health > 0 && player.Health > 0);
 
                         if (player.Health <= 0)
@@ -234,13 +223,16 @@ namespace SpaceGame
             try
             {
                 int choice;
-                do
 
+                do
                 {
                     Console.WriteLine($"{shop.ShowShop(player)}");
 
-                    choice = int.Parse(Console.ReadLine());
-
+                    string temp;
+                    do
+                    {
+                        temp = Console.ReadLine();
+                    } while (int.TryParse(temp, out choice));
 
                     if (choice == shop.ReturnItemCount())
                         continue;
