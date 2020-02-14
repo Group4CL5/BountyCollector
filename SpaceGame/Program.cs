@@ -42,7 +42,7 @@ namespace SpaceGame
 
             LoadHubb(true);
 
-            SpaceMenu.Play(); 
+            SpaceMenu.PlayLooping(); 
             Setting();          // the default constructor will display the endsetting
             
         }
@@ -102,18 +102,20 @@ namespace SpaceGame
                                       "Press [Enter]");
                     Console.ReadKey();
                     Console.Clear();
-                    planet.Soundtrack.Play();
+                    planet.Soundtrack.PlayLooping();
                     Console.WriteLine(planet.Text);
-                    Console.WriteLine("You start searching for bounty.");
+                    Console.WriteLine("You start searching for bounty....\n Is that an enemy?\n");
                     foreach (var enemy in planet.Enemies)
                     {
-                        Console.WriteLine(enemy.Name + ": " + enemy.AppearMessage);
+                        Console.WriteLine($"=================================================================\n" +
+                                          $"{enemy.Name}: { enemy.AppearMessage}\n" +
+                                           "=================================================================\n");
                         Fight fight = new Fight(planet.Op);
                         string answer;
                         do
                         {
                             Console.WriteLine(fight.DisplayFight(enemy, player));
-                            Console.WriteLine("What's your answer Aster?");
+                            Console.WriteLine("\nWhat's your answer Aster?");
                             answer = Console.ReadLine();
 
                             if (fight.InputAnswer(answer))
@@ -131,7 +133,9 @@ namespace SpaceGame
                             LoadPlanet();
 
                         }
-                        else Console.WriteLine(enemy.Name + " is dead. \n");
+                        else Console.WriteLine($"===================================\n" +
+                                               $"{enemy.Name} is dead. \n" +
+                                               $"===================================\n");
 
                         Console.WriteLine("Press [Enter] to continue traversing through planet.");
                         Console.ReadKey();

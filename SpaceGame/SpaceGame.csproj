@@ -68,6 +68,9 @@
     <Content Include="SpaceMenu.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Static.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Void.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

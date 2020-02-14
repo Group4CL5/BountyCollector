@@ -57,3 +57,4 @@ C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\Watergate.wa
 C:\Users\chimp\Documents\Visual Studio 2019\Projects\BountyCollector\SpaceGame\bin\Debug\Watergate.wav
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\Illusion.wav
 C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\Void.wav
+C:\Users\fsant\Documents\GitHub\BountyCollector\SpaceGame\bin\Debug\Static.wav

@@ -18,12 +18,14 @@ namespace SpaceGameClassLibrary
             text += "You are Aster Roid, you are known across the Void Empire\n" +
                 "as the one who travels through space to collect bounties. \n" +
                 "You are also known for being very good at Mathematics!\n"+
+                "=========================================================\n"+
                 "You are invited to a secret rebel planet called Hubb. While \n" +
                 "the inhabitants of Hubb were planning to overthrow the Void \n" +
                 "Empire, they chose you to be the hero. They tasked you to \n" +
                 "collect bounties from the five other planets that are under \n" +
                 "imperial control: Red Sand, Watergate, Static, Illusion and \n" +            
-                "Void.\n\n" +
+                "Void.\n" +
+                 "=========================================================\n" +
                 "The bounties you collect can be traded in for spaceships. \n" +
                 "For every planet you are going to need a special spaceship. \n";
             text += "=========================================================\n" +

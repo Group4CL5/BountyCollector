@@ -30,7 +30,7 @@ namespace SpaceGameClassLibrary
                 "==================================================================\n",
                 new[,] {{ "Little Red 1", "Addition is my favorite, you will not get past me.", "3" },
                                {"Little Red 2", "He was not the greastest at addition. Addition is my middle name.", "3" },
-                               {"Big Red", "I promise you that you will not defeat me easily, I'm going to send you back to your planet.", "10" }
+                               {"Big Red", "I promise you that you will not defeat me easily,\n I'm going to send you back to your planet.", "10" }
 
                 });
             _planets.Add(planet1);
@@ -46,7 +46,7 @@ namespace SpaceGameClassLibrary
                 });
             _planets.Add(planet2);
 
-            Planet planet3 = new Planet(40, '*', "BountyCollector","Static",
+            Planet planet3 = new Planet(40, '*', "Static","Static",
                 "=============================================================\n"+
                 "You have entered the stormy planet called Static where \n" +
                 "the boss Scorpio dwells. You walk cautiously as lightning comes \n" +
@@ -79,7 +79,7 @@ namespace SpaceGameClassLibrary
                 "============================================================\n",
                 new[,] {{"Thug 1", "Im actually scared, they said you are really smart.", "3" },
                                {"Thug 2", "I bet you are not smarter than me.", "3" },
-                               {"Meaty Ore", "Im told that you are the one running around in the galaxy causing a mess. You are never going to leave my planet. ", "10" }
+                               {"Meaty Ore", "Im told that you are the one running around in the galaxy causing a mess.\n You are never going to leave my planet. ", "10" }
                 });
 
             _planets.Add(planet5);
