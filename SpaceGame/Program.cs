@@ -103,17 +103,12 @@ namespace SpaceGame
         {
             Console.Clear();
 
-            Console.WriteLine("You are trying to travel....analyzing ship.....\n" +
-                              "Press [Enter]");
-            Console.ReadKey();
-
             try
             {
-                if (player.Item == gameManager.Bounty)
                 Console.WriteLine("========================================================\n" +
-                                   "You are trying to travel....analyzing ship.....\n");
+                                   "You are trying to travel....analyzing ship.....\n" +
+                                   "Press [Enter]\n");
                 Console.ReadKey();
-
 
                 if (player.Item == gameManager.Bounty)
                 {
@@ -128,62 +123,53 @@ namespace SpaceGame
                     planet.Soundtrack.Play();
                     Console.WriteLine(planet.Text);
                     Console.WriteLine("You start searching for bounty.");
-                    for (int i = 0; i < planet.Enemies.Count; i++)
+                    foreach (var enemy in planet.Enemies)
                     {
-                        Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
-                        Console.WriteLine(planet.Name);
-                        planet.Soundtrack.Play();
-                        Console.WriteLine(planet.Text);
-                        for (int i = 0; i < planet.Enemies.Count; i++)
+                        Console.WriteLine(enemy.name + ": " + enemy.appearMessage);
+                        Fight fight = new Fight(planet.Op);
+                        string answer;
+                        do
                         {
-
-                            Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
-                            Fight fight = new Fight(planet.Op);
-                            string answer;
-                            do
+                            Console.WriteLine(fight.DisplayFight(enemy, player));
+                            Console.WriteLine("What's your answer Aster?");
+                            answer = Console.ReadLine();
+                            try
                             {
-                                Console.WriteLine(fight.DisplayFight(planet.Enemies[i], player));
-                                Console.WriteLine("What's your answer Aster?");
-                                answer = Console.ReadLine();
-                                try
+                                if (fight.InputAnswer(answer))
                                 {
-                                    if (fight.InputAnswer(answer))
-                                    {
-                                        planet.Enemies[i].LoseHealth(1);
-                                    }
-                                    else player.LoseHealth(1);
+                                    enemy.LoseHealth(1);
                                 }
-                                catch (Exception)
-                                {
-                                    continue;
-                                }
-                            } while (planet.Enemies[i].Health > 0 && player.Health > 0);
-
-                            if (player.Health <= 0)
-                            {
-                                Console.WriteLine("You are dead, Aster.\n");
-                                Console.WriteLine("Press [Enter] to try again...");
-                                Console.ReadKey();
-                                LoadPlanet();
-
+                                else player.LoseHealth(1);
                             }
-                            else Console.WriteLine(planet.Enemies[i].name + " is dead. \n");
+                            catch (Exception)
+                            {
+                                continue;
+                            }
+                        } while (enemy.Health > 0 && player.Health > 0);
 
-                            Console.WriteLine("Press [Enter] to continue traversing through planet.");
+                        if (player.Health <= 0)
+                        {
+                            Console.WriteLine("You are dead, Aster.\n");
+                            Console.WriteLine("Press [Enter] to try again...");
                             Console.ReadKey();
-                            Console.Clear();
-                        }
+                            LoadPlanet();
 
-                        gameManager.Bounty += 1;
-                        player.Health = 3;
-                        player.AddCoins(planet.Coins);
-                        Console.WriteLine("========================================================\n" +
-                                          "You find no other inhabitants. \n " +
-                                          $"You have cleared {planet.Name} of Imperial rule....\n" +
-                                          "Press [Enter] to collect bounty and return to Hubb...\n" +
-                                          "========================================================");
+                        }
+                        else Console.WriteLine(enemy.name + " is dead. \n");
+
+                        Console.WriteLine("Press [Enter] to continue traversing through planet.");
                         Console.ReadKey();
+                        Console.Clear();
                     }
+                    gameManager.Bounty += 1;
+                    player.Health = 3;
+                    player.AddCoins(planet.Coins);
+                    Console.WriteLine("========================================================\n" +
+                                      "You find no other inhabitants. \n " +
+                                      $"You have cleared {planet.Name} of Imperial rule....\n" +
+                                      "Press [Enter] to collect bounty and return to Hubb...\n" +
+                                      "========================================================");
+                    Console.ReadKey();
                 }
 
                 else
