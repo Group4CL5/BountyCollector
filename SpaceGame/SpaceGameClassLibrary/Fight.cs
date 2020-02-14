@@ -61,13 +61,10 @@ namespace SpaceGameClassLibrary
 
         public bool InputAnswer(string inputAnswer)
         {
-      
-            
-                if (_rndOp)
-                    return CheckOpAnswer(inputAnswer);
-                else
-                    return CheckNumAnswer(inputAnswer);
-            
+            if (_rndOp)
+                return CheckOpAnswer(inputAnswer);
+            else
+                return CheckNumAnswer(inputAnswer);
             
         }
 
@@ -93,7 +90,7 @@ namespace SpaceGameClassLibrary
         // Check the equation
         private void GenerateEquation(out int x, out int y, out int answer, char op)
         {
-            x = rnd.Next(1, 10);
+            x = rnd.Next(2, 10);
 
             // Keep generating value Y if
             //      Division:
@@ -105,7 +102,7 @@ namespace SpaceGameClassLibrary
             //         - X % Y does not equal 0
             do
             {
-                y = rnd.Next(2, 10);
+                y = rnd.Next(1, 10);
             } while ((op == '/' && (y > x || (x % y) != 0)) || (op == '-' && y > x));
 
             switch (op)
