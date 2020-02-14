@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
+
+
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Security.Cryptography;

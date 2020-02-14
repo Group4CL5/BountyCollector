@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * BOUNTY COLLECTOR
+ * Group 4 - Space Game
+ * Collin Handel, Francisco Santillana, Tyler Bia, David Harris, Aaron Miller
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -91,82 +98,91 @@ namespace SpaceGame
             }
             Console.ReadKey();
         }
-        void LoadPlanet()//This method loads a planet depending on the item (spaceship) that the player has obtained.
+
+        void LoadPlanet() //This method loads a planet depending on the item (spaceship) that the player has obtained.
         {
-            Console.Clear();          
+            Console.Clear();
             Console.WriteLine("You are trying to travel....analyzing ship.....\n" +
-                                "Press [Enter]");
+                              "Press [Enter]");
             Console.ReadKey();
-            if (player.Item == gameManager.Bounty)
+
+            try
             {
-                Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
-                Console.WriteLine(planet.Name);
-                planet.Soundtrack.Play();
-                Console.WriteLine(planet.Text);
-                for (int i = 0; i < planet.Enemies.Count; i++)
+                if (player.Item == gameManager.Bounty)
                 {
-                    
-                    Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
-                    Fight fight = new Fight(planet.Op);
-                    string answer;
-                    do
+                    Planet planet = planetManager.ReturnPlanet(gameManager.Bounty - 1);
+                    Console.WriteLine(planet.Name);
+                    planet.Soundtrack.Play();
+                    Console.WriteLine(planet.Text);
+                    for (int i = 0; i < planet.Enemies.Count; i++)
                     {
-                       Console.WriteLine(fight.DisplayFight(planet.Enemies[i], player));
-                        Console.WriteLine("What's your answer Aster?");
-                        answer = Console.ReadLine();
-                        try
+
+                        Console.WriteLine(planet.Enemies[i].name + ": " + planet.Enemies[i].appearMessage);
+                        Fight fight = new Fight(planet.Op);
+                        string answer;
+                        do
                         {
-                            if (fight.InputAnswer(answer))
+                            Console.WriteLine(fight.DisplayFight(planet.Enemies[i], player));
+                            Console.WriteLine("What's your answer Aster?");
+                            answer = Console.ReadLine();
+                            try
                             {
-                                planet.Enemies[i].LoseHealth(1);
+                                if (fight.InputAnswer(answer))
+                                {
+                                    planet.Enemies[i].LoseHealth(1);
+                                }
+                                else player.LoseHealth(1);
                             }
-                            else player.LoseHealth(1);
-                        }
-                        catch (Exception)
+                            catch (Exception)
+                            {
+                                continue;
+                            }
+                        } while (planet.Enemies[i].Health > 0 && player.Health > 0);
+
+                        if (player.Health <= 0)
                         {
-                            continue;
+                            Console.WriteLine("You are dead, Aster.\n");
+                            Console.WriteLine("Press [Enter] to try again...");
+                            Console.ReadKey();
+                            LoadPlanet();
+
                         }
-                    }
-                    
+                        else Console.WriteLine(planet.Enemies[i].name + " is dead. \n");
 
-                    while (planet.Enemies[i].Health > 0 && player.Health > 0);
-                    if (player.Health <= 0)
-                    {
-                        Console.WriteLine("You are dead, Aster.\n");
-                        Console.WriteLine("Press [Enter] to try again...");
+                        Console.WriteLine("Press [Enter] to continue traversing through planet.");
                         Console.ReadKey();
-                        LoadPlanet();
-
+                        Console.Clear();
                     }
-                    else Console.WriteLine(planet.Enemies[i].name + " is dead. \n");
-                    Console.WriteLine("Press [Enter] to continue traversing through planet.");
+
+                    gameManager.Bounty += 1;
+                    player.Health = 3;
+                    player.AddCoins(planet.Coins);
+                    Console.WriteLine("========================================================\n" +
+                                      "You find no other inhabitants. \n " +
+                                      $"You have cleared {planet.Name} of Imperial rule....\n" +
+                                      "Press [Enter] to collect bounty and return to Hubb...\n" +
+                                      "========================================================");
                     Console.ReadKey();
-                    Console.Clear();
                 }
-                gameManager.Bounty += 1;
-                player.Health = 3;
-                player.AddCoins(planet.Coins);
-                Console.WriteLine("========================================================\n"+
-                                    "You find no other inhabitants. \n " +
-                                    $"You have cleared {planet.Name} of Imperial rule....\n" +
-                                    "Press [Enter] to collect bounty and return to Hubb...\n"+
-                                  "========================================================");
-                Console.ReadKey();
-            }
 
-            else
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
+                                      "Press [Enter] to return to the Hubb....");
+                    Console.ReadKey();
+                }
+
+                if (gameManager.Bounty > planetManager.ReturnPlanets().Count)
+                    EndGame();
+                else
+                    LoadHubb();
+
+            }
+            catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine("You do not have the proper spaceship to travel to the next planet.\n" +
-                                     "Press [Enter] to return to the Hubb....");
-                Console.ReadKey();
+                Console.WriteLine(ex.Message);
             }
-
-            if (gameManager.Bounty > planetManager.ReturnPlanets().Count)
-                EndGame();
-            else
-                LoadHubb();
-           
         }
 
         void EndGame()
