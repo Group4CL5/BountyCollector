@@ -56,7 +56,10 @@ namespace SpaceGame
             string choice;
             do
             {
-                Console.WriteLine("Do you want to start the game? (Yes) or (No) : ");
+                Console.WriteLine("Do you want to start the game? \n" +
+                                  "-----------------------------\n" +
+                                  "Type in: [Yes] to start. \n" +
+                                  "Type in: [No] to exit.");
                 choice = Console.ReadLine();
             } while (choice != null && (choice.ToLower() != "yes" && choice.ToLower() != "no"));
 
@@ -104,7 +107,7 @@ namespace SpaceGame
                     Console.Clear();
                     planet.Soundtrack.PlayLooping();
                     Console.WriteLine(planet.Text);
-                    Console.WriteLine("You start searching for bounty....\n Is that an enemy?\n");
+                    Console.WriteLine("You start searching for bounty....\nIs that an enemy?\n");
                     foreach (var enemy in planet.Enemies)
                     {
                         Console.WriteLine($"=================================================================\n" +
