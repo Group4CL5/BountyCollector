@@ -56,9 +56,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BountyCollector.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Illusion.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
